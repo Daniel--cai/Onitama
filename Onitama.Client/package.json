@@ -1,0 +1,71 @@
+{
+  "name": "onitama-client",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@aspnet/signalr": "^1.1.4",
+    "@types/jest": "24.0.18",
+    "@types/node": "12.7.2",
+    "@types/react": "16.9.2",
+    "@types/react-dom": "16.9.0",
+    "@types/react-redux": "^7.1.2",
+    "axios": "^0.19.0",
+    "classnames": "^2.2.6",
+    "connected-react-router": "^6.5.2",
+    "enzyme-adapter-react-16": "^1.14.0",
+    "http-proxy-middleware": "^0.19.1",
+    "node-fetch": "^2.0.0",
+    "node-sass": "^4.12.0",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-hot-loader": "^4.12.13",
+    "react-redux": "^7.1.1",
+    "react-responsive-carousel": "^3.1.50",
+    "react-router-dom": "^5.0.1",
+    "react-scripts": "3.1.1",
+    "react-slick": "^0.25.2",
+    "react-socks": "^2.1.0",
+    "react-spring": "^8.0.27",
+    "react-test-renderer": "^16.10.1",
+    "react-transition-group": "^4.3.0",
+    "react-visibility-sensor": "^5.1.1",
+    "redux": "^4.0.4",
+    "redux-thunk": "^2.3.0",
+    "slick-carousel": "^1.8.1",
+    "typescript": "3.5.3"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@fortawesome/fontawesome-free": "^5.11.2",
+    "@types/classnames": "^2.2.9",
+    "@types/enzyme": "^3.10.3",
+    "@types/fetch-mock": "^7.3.1",
+    "@types/react-router-dom": "^4.3.5",
+    "@types/react-transition-group": "^4.2.2",
+    "@types/redux-mock-store": "^1.0.1",
+    "@types/webpack-env": "^1.14.0",
+    "enzyme": "^3.10.0",
+    "fetch-mock": "^7.5.1",
+    "redux-mock-store": "^1.5.3"
+  }
+}
