@@ -3,7 +3,16 @@ import { RouteComponentProps } from "react-router";
 import Axios from "axios";
 import "./Lobby.scss";
 import { Board } from "../components/board";
+import { DndProvider } from "react-dnd";
+import HTML5Backend from "react-dnd-html5-backend";
+import { State } from "../store";
+import { useSelector } from "react-redux";
 
 export const Lobby: React.FC<RouteComponentProps<{ code: string }>> = props => {
-  return <Board tiles={[]}></Board>;
+  const pieces = useSelector((store: State) => store.pieces);
+  return (
+    <DndProvider backend={HTML5Backend}>
+      <Board pieces={pieces} />
+    </DndProvider>
+  );
 };

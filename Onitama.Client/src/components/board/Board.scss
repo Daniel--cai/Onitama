@@ -14,13 +14,19 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
+  &--isOver {
+    background: #cccccc;
+  }
 }
 .piece {
   width: 0;
   height: 0;
   border: 15px solid blue;
   border-radius: 100%;
-
+  color: white;
+  &:hover {
+    cursor: pointer;
+  }
   &--blue {
     border-color: blue;
   }
@@ -32,5 +38,9 @@
   }
   &--pupil {
     border-width: 15px;
+  }
+  &--is-dragging {
+    visibility: hidden;
+    cursor: pointer;
   }
 }
