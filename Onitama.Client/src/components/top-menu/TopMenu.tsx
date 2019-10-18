@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "./TopMenu.scss";
 import Logo from "../../assets/images/logo.png";
-import classnames from "classnames";
 
 export const TopMenu: React.FC = () => {
   const [toggle, setToggle] = useState(false);
@@ -9,10 +8,10 @@ export const TopMenu: React.FC = () => {
     <div className="menu-container">
       <nav>
         <a href="/" className="logo">
-          <img className="menu-container__logo" src={Logo}></img>
+          <img className="menu-container__logo" alt="" src={Logo}></img>
         </a>
         <input type="checkbox" id="menu-toggle" />
-        {/* <label htmlFor="menu-toggle" className="burger-menu">
+        <label htmlFor="menu-toggle" className="burger-menu">
           <div
             className={toggle ? "menu-icon menu-icon--active" : "menu-icon"}
             onClick={() => setToggle(!toggle)}
@@ -22,7 +21,7 @@ export const TopMenu: React.FC = () => {
             <span></span>
             <span></span>
           </div>
-        </label> */}
+        </label>
         <div className="left-menu">
           <a href="/">
             <span>Rules</span>

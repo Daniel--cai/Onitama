@@ -2,11 +2,10 @@ import React from "react";
 import "./Board.scss";
 import classnames from "classnames";
 import { useDrag, useDrop } from "react-dnd";
-import { Tile, Piece, PieceType, Colour } from "../../model";
+import { Piece, PieceType, Colour } from "../../store/pieces/models";
 import { useDispatch } from "react-redux";
-import { movePieceAction, getPosition, getIndex } from "../../store";
-
-const COLUMNS = "abcdefgh".split("");
+import { getPosition } from "../../utils/coordinates";
+import { movePiece } from "../../store/pieces/actions";
 
 export const Board: React.FC<{ pieces: Piece[] }> = props => {
   function renderPiece(index: number) {
@@ -39,8 +38,8 @@ export const PieceTile: React.FC<{
   id: number;
 }> = props => {
   const type =
-    props.type == PieceType.Master ? "piece--master" : "piece--pupil";
-  const colour = props.colour == Colour.Black ? "piece--blue" : "piece--red";
+    props.type === PieceType.Master ? "piece--master" : "piece--pupil";
+  const colour = props.colour === Colour.Black ? "piece--blue" : "piece--red";
 
   const [{ isDragging }, drag] = useDrag({
     item: { type: props.id.toString() },
@@ -68,7 +67,7 @@ export const Square: React.FC<{
   const [x, y] = getPosition(props.index);
 
   const onDrop = (item: any) => {
-    dispatch(movePieceAction({ id: parseInt(item.type), x, y }));
+    dispatch(movePiece(parseInt(item.type), x, y));
   };
 
   const [{ isOver }, drop] = useDrop({

@@ -1,0 +1,24 @@
+.card-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.card {
+  display: grid;
+  grid-template-columns: repeat(5, auto);
+  grid-template-rows: repeat(5, auto);
+  width: 150px;
+  height: 150px;
+  cursor: pointer;
+}
+.square {
+  border: 1px solid #cccccc;
+  &--move {
+    background: #cccccc;
+    border-color: #cccccc;
+  }
+  &--base {
+    background: #444444;
+    border-color: #444444;
+  }
+}

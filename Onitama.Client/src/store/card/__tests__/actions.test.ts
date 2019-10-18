@@ -1,10 +1,9 @@
-import * as actions from "../actionCreator";
-import { GameFetched } from "../../client/events";
 import configureMockStore, { MockStoreEnhanced } from "redux-mock-store";
 import thunk from "redux-thunk";
-import { GameState } from "../../constants/GameState";
-import { initialState, State } from "../store";
-import { Cards } from "../../constants/Card";
+import { Cards } from "../../../constants/Card";
+import { initialState, State } from "../..";
+import { selectCard } from "../actions";
+import { SELECT_CARD, CardActionTypes } from "../types";
 
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
@@ -15,11 +14,11 @@ describe("actions", () => {
     store = mockStore(initialState);
   });
   it("selectCard should create an action to update selected", () => {
-    store.dispatch(actions.selectCardAction({ card: Cards[0] }));
+    store.dispatch(selectCard(Cards[0]));
 
-    const expectedAction = {
-      type: "selectCard",
-      payload: { card: Cards[0] }
+    const expectedAction: CardActionTypes = {
+      type: SELECT_CARD,
+      payload: Cards[0]
     };
 
     expect(store.getActions()[0].type).toEqual(expectedAction.type);
