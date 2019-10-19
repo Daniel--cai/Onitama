@@ -14,11 +14,11 @@ describe("actions", () => {
     store = mockStore(initialState);
   });
   it("selectCard should create an action to update selected", () => {
-    store.dispatch(selectCard(Cards[0]));
+    store.dispatch(selectCard(1));
 
     const expectedAction: CardActionTypes = {
       type: SELECT_CARD,
-      payload: Cards[0]
+      payload: 1
     };
 
     expect(store.getActions()[0].type).toEqual(expectedAction.type);

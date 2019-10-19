@@ -6,8 +6,8 @@ describe("card reducer", () => {
   it("should handle selectCard", () => {
     const expectedAction: CardActionTypes = {
       type: SELECT_CARD,
-      payload: Cards[0]
+      payload: 1
     };
-    expect(cardReducer([], expectedAction)).toEqual(Cards[0]);
+    expect(cardReducer(-1, expectedAction)).toEqual(1);
   });
 });

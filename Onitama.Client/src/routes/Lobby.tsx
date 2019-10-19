@@ -13,7 +13,7 @@ export const Lobby: React.FC<RouteComponentProps<{ code: string }>> = props => {
   const pieces = useSelector((store: State) => store.pieces);
   return (
     <DndProvider backend={HTML5Backend}>
-      <Board pieces={pieces} />
+      <Board pieces={pieces.collection} />
       <CardList />
     </DndProvider>
   );

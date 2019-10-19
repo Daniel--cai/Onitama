@@ -12,8 +12,8 @@ import { CardActionTypes } from "../../store/card/types";
 export const CardList: React.FC<{}> = _ => {
   const dispatch = useDispatch<Dispatch<CardActionTypes>>();
   const handleClick = useCallback(
-    (card: number[]) => {
-      dispatch(selectCard(card));
+    (index: number) => {
+      dispatch(selectCard(index));
     },
     [dispatch]
   );
@@ -24,8 +24,8 @@ export const CardList: React.FC<{}> = _ => {
         <Card
           key={index}
           card={card}
-          onClick={() => handleClick(card)}
-          active={card === currentCard}
+          onClick={() => handleClick(index)}
+          active={index === currentCard}
         />
       ))}
     </div>

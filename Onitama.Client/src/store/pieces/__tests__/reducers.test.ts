@@ -8,6 +8,11 @@ describe("pieces reducer", () => {
       type: MOVE_PIECE,
       payload: { id: 1, x: 2, y: 3 }
     };
-    expect(piecesReducer([], expectedAction)).toEqual(Cards[0]);
+    expect(
+      piecesReducer({ collection: [], current: -1 }, expectedAction)
+    ).toEqual({
+      pieces: Cards[0],
+      piece: -1
+    });
   });
 });

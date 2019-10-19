@@ -18,6 +18,10 @@
   &--isOver {
     background: #cccccc;
   }
+
+  &--isValid {
+    background: green;
+  }
 }
 .piece {
   width: 0;

@@ -4,6 +4,7 @@ import { routerMiddleware, connectRouter } from "connected-react-router";
 import thunkMiddleware from "redux-thunk";
 import { piecesReducer } from "./pieces/reducers";
 import { cardReducer } from "./card/reducers";
+import { initialise } from "./pieces/state";
 
 export const history = createBrowserHistory();
 const rootReducer = combineReducers({
@@ -30,17 +31,17 @@ export function configureStore() {
   return store;
 }
 
-// export const initialState: State = {
-//   pieces: initialise(),
-//   card: [],
-//   router: {
-//     location: {
-//       pathname: "",
-//       search: "",
-//       state: "",
-//       hash: "",
-//       key: undefined
-//     },
-//     action: "REPLACE"
-//   }
-// };
+export const initialState: State = {
+  pieces: initialise(),
+  card: -1,
+  router: {
+    location: {
+      pathname: "",
+      search: "",
+      state: "",
+      hash: "",
+      key: undefined
+    },
+    action: "REPLACE"
+  }
+};

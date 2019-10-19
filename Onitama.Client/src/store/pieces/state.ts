@@ -4,7 +4,7 @@ import { PiecesState } from "./types";
 let pieceCounter = 0;
 
 export function initialise(): PiecesState {
-  const pieces: Piece[] = [
+  const collection: Piece[] = [
     initPiece(0, 0, Colour.White, PieceType.Pupil),
     initPiece(1, 0, Colour.White, PieceType.Pupil),
     initPiece(2, 0, Colour.White, PieceType.Master),
@@ -16,7 +16,7 @@ export function initialise(): PiecesState {
     initPiece(3, 4, Colour.Black, PieceType.Pupil),
     initPiece(4, 4, Colour.Black, PieceType.Pupil)
   ];
-  return pieces;
+  return { collection, current: -1 };
 }
 
 export function initPiece(
