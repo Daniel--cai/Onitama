@@ -4,11 +4,16 @@ import classnames from "classnames";
 import { useDrag, useDrop } from "react-dnd";
 import { Piece, PieceType, Colour } from "../../store/pieces/models";
 import { useDispatch, useSelector } from "react-redux";
-import { getPosition } from "../../utils/coordinates";
+import {
+  getPosition,
+  isValidSquare,
+  getCardOffsets
+} from "../../utils/coordinates";
 import { movePiece, movingPiece } from "../../store/pieces/actions";
 import { State } from "../../store";
 import { PiecesActionTypes } from "../../store/pieces/types";
 import { Dispatch } from "redux";
+import { Cards } from "../../constants/Card";
 
 export const Board: React.FC<{ pieces: Piece[] }> = props => {
   const dispatch = useDispatch<Dispatch<PiecesActionTypes>>();
@@ -29,14 +34,16 @@ export const Board: React.FC<{ pieces: Piece[] }> = props => {
   }
   const board = new Array(25).fill("");
   const [validSquare, setValidSquare] = useState<number[]>([]);
-  const piece = useSelector<State, State["pieces"]>(store => store.pieces);
+  const card = useSelector<State, State["card"]>(store => store.card);
+  const pieces = useSelector<State, State["pieces"]>(store => store.pieces);
   const [dragging, setDragging] = useState(false);
 
   useEffect(() => {
     if (!dragging) {
       setValidSquare([]);
     } else {
-      setValidSquare([1, 2, 3, 4, 5]);
+      console.log(Cards[card]);
+      setValidSquare(Cards[card]);
     }
   }, [dragging]);
 
@@ -44,6 +51,21 @@ export const Board: React.FC<{ pieces: Piece[] }> = props => {
     setDragging(isDragging);
     dispatch(movingPiece(index));
   }
+
+  function getValidSquares(squareIndex: number): number[] {
+    if (pieces.current) {
+      const [sx, sy] = getPosition(squareIndex);
+      const offsets = getCardOffsets(Cards[0]);
+      // const validSquares = getIndex
+
+      console.log("squareIndex", true);
+      // return valid;
+    }
+    return [];
+  }
+
+  console.log(validSquare);
+
   return (
     <div className="board">
       {board.map((_, index) => {
@@ -51,7 +73,7 @@ export const Board: React.FC<{ pieces: Piece[] }> = props => {
           <Square
             key={index}
             index={index}
-            colour={validSquare.includes(index) ? "green" : "white"}
+            colour={checkValidSquare(index) ? "green" : "white"}
           >
             {renderPiece(index)}
           </Square>
@@ -114,7 +136,6 @@ export const Square: React.FC<{
       isOver: !!monitor.isOver()
     })
   });
-
   return (
     <div
       className={classnames(
@@ -124,7 +145,7 @@ export const Square: React.FC<{
       )}
       ref={drop}
     >
-      {props.children}
+      {props.index} ({x}, {y}){props.children}
     </div>
   );
 };

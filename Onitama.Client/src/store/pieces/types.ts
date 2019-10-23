@@ -5,7 +5,7 @@ export const MOVING_PIECE = "MOVING_PIECE";
 
 export interface PiecesState {
   collection: Piece[];
-  current: number;
+  current: Piece | undefined;
 }
 
 interface MovePieceAction {

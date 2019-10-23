@@ -24,7 +24,10 @@ export function piecesReducer(
         })
       };
     case MOVING_PIECE:
-      return { ...state, current: action.payload };
+      return {
+        ...state,
+        current: state.collection.find(piece => piece.id === action.payload)
+      };
     default:
       return state;
   }

@@ -1,6 +1,6 @@
 import * as React from "react";
 import { mount, shallow } from "enzyme";
-import { CardList } from "./CardList";
+import CardList from "./CardList";
 import { Cards } from "../../constants/Card";
 import configureMockStore, { MockStoreEnhanced } from "redux-mock-store";
 import { useDispatch } from "react-redux";
@@ -19,6 +19,6 @@ describe("<CardList />", () => {
   });
 
   it("should make card active when clicked", () => {
-    const wrapper = shallow(<CardList />);
+    const wrapper = mount(<CardList />);
   });
 });

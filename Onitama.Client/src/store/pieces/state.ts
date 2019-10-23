@@ -16,7 +16,7 @@ export function initialise(): PiecesState {
     initPiece(3, 4, Colour.Black, PieceType.Pupil),
     initPiece(4, 4, Colour.Black, PieceType.Pupil)
   ];
-  return { collection, current: -1 };
+  return { collection, current: undefined };
 }
 
 export function initPiece(
