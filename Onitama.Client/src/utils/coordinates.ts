@@ -1,5 +1,7 @@
 export const getIndex = (x: number, y: number) => {
-  if (x >= 0 && x < 5 && y >= 0 && y < 5) return x + y * 5;
+  if (x >= 0 && x < 5 && y >= 0 && y < 5) {
+    return x + y * 5;
+  }
   return -1;
 };
 
@@ -32,4 +34,10 @@ export const getCardOffsets = (card: number[]): number[][] => {
     }
   }
   return offsets;
+};
+
+export const getCalculatedOffsets = (card: number[], x: number, y: number) => {
+  return getCardOffsets(card).map(offset => {
+    return getIndex(x + offset[0], y + offset[1]);
+  });
 };

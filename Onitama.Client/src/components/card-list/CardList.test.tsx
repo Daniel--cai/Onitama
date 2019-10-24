@@ -1,9 +1,15 @@
 import * as React from "react";
-import { mount, shallow } from "enzyme";
-import CardList from "./CardList";
+import {
+  render,
+  fireEvent,
+  getAllByAltText,
+  getByTestId,
+  getByLabelText,
+  getByText
+} from "@testing-library/react";
+import { CardList } from "./CardList";
 import { Cards } from "../../constants/Card";
 import configureMockStore, { MockStoreEnhanced } from "redux-mock-store";
-import { useDispatch } from "react-redux";
 import { selectCard } from "../../store/card/actions";
 const mockStore = configureMockStore();
 
@@ -13,12 +19,15 @@ describe("<CardList />", () => {
     store = mockStore({ card: [] });
   });
 
-  it("renders", () => {
-    store.dispatch(selectCard(1));
-    mount(<CardList />);
+  it("renders welcome message", () => {
+    const { getByText } = render(<CardList />);
   });
 
   it("should make card active when clicked", () => {
-    const wrapper = mount(<CardList />);
+    const wrapper = render(<CardList />);
+    wrapper.findAllByText("li button");
+    fireEvent.click(getByText("1"));
+    const elem = getByTestId("item");
+    expect(elem.classList[0]).toBe("selected");
   });
 });

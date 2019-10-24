@@ -15,12 +15,13 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  &--isOver {
-    background: #cccccc;
-  }
+  // &--isOver {
+  //   // background: #cccccc;
+  // }
 
   &--isValid {
-    background: green;
+    // background: green;
+    background: #cccccc;
   }
 }
 .piece {

@@ -7,13 +7,13 @@ import { BreakpointProvider } from "react-socks";
 const App: React.FC<any> = ({ history }) => {
   return (
     <ConnectedRouter history={history}>
-      <BreakpointProvider>
-        <div className="app">
-          <Route exact path="/" component={Lobby} />
-          <DefaultLayout exact path="/lobby/:code" component={Lobby} />
-          <DefaultLayout exact path="/game/:code" component={Game} />
-        </div>
-      </BreakpointProvider>
+      {/* <BreakpointProvider> */}
+      <div className="app">
+        <Route exact path="/" component={Lobby} />
+        <DefaultLayout exact path="/lobby/:code" component={Lobby} />
+        <DefaultLayout exact path="/game/:code" component={Game} />
+      </div>
+      {/* </BreakpointProvider> */}
     </ConnectedRouter>
   );
 };

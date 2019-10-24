@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from "react";
 import "./Board.scss";
-import classnames from "classnames";
-import { useDrag, useDrop } from "react-dnd";
-import { Piece, PieceType, Colour } from "../../store/pieces/models";
+import { Piece } from "../../store/pieces/models";
 import { useDispatch, useSelector } from "react-redux";
 import {
   getPosition,
-  isValidSquare,
-  getCardOffsets
+  getIndex,
+  getCalculatedOffsets
 } from "../../utils/coordinates";
-import { movePiece, movingPiece } from "../../store/pieces/actions";
+import { PieceTile } from "./PieceTile";
+import { Square } from "./Square";
+import { movingPiece } from "../../store/pieces/actions";
 import { State } from "../../store";
 import { PiecesActionTypes } from "../../store/pieces/types";
 import { Dispatch } from "redux";
@@ -17,9 +17,20 @@ import { Cards } from "../../constants/Card";
 
 export const Board: React.FC<{ pieces: Piece[] }> = props => {
   const dispatch = useDispatch<Dispatch<PiecesActionTypes>>();
+  const [validSquare, setValidSquare] = useState<number[]>([]);
+  const card = useSelector<State, State["card"]>(store => store.card);
+  const pieces = useSelector<State, State["pieces"]>(store => store.pieces);
+  const [dragging, setDragging] = useState(false);
+
   function renderPiece(index: number) {
     const [x, y] = getPosition(index);
     const piece = props.pieces.find(piece => piece.x === x && piece.y === y);
+
+    function handleDragging(isDragging: boolean, index = -1) {
+      setDragging(isDragging);
+      dispatch(movingPiece(index));
+    }
+
     if (piece) {
       return (
         <PieceTile
@@ -30,122 +41,41 @@ export const Board: React.FC<{ pieces: Piece[] }> = props => {
         />
       );
     }
-    return null;
+    return <></>;
   }
-  const board = new Array(25).fill("");
-  const [validSquare, setValidSquare] = useState<number[]>([]);
-  const card = useSelector<State, State["card"]>(store => store.card);
-  const pieces = useSelector<State, State["pieces"]>(store => store.pieces);
-  const [dragging, setDragging] = useState(false);
+
+  function getValidSquares(anchorX: number, anchorY: number): number[] {
+    let offsets = getCalculatedOffsets(Cards[card], anchorX, anchorY);
+    const occupied = pieces.collection.map(piece => getIndex(piece.x, piece.y));
+    return [...new Array(25)].map((_, i) =>
+      offsets.includes(i) && !occupied.includes(i) ? 1 : 0
+    );
+  }
 
   useEffect(() => {
     if (!dragging) {
       setValidSquare([]);
     } else {
-      console.log(Cards[card]);
-      setValidSquare(Cards[card]);
+      if (pieces.current) {
+        setValidSquare(getValidSquares(pieces.current.x, pieces.current.y));
+      }
     }
   }, [dragging]);
 
-  function handleDragging(isDragging: boolean, index = -1) {
-    setDragging(isDragging);
-    dispatch(movingPiece(index));
-  }
-
-  function getValidSquares(squareIndex: number): number[] {
-    if (pieces.current) {
-      const [sx, sy] = getPosition(squareIndex);
-      const offsets = getCardOffsets(Cards[0]);
-      // const validSquares = getIndex
-
-      console.log("squareIndex", true);
-      // return valid;
-    }
-    return [];
-  }
-
-  console.log(validSquare);
-
   return (
     <div className="board">
-      {board.map((_, index) => {
+      {[...Array(25)].map((_, index) => {
         return (
           <Square
             key={index}
             index={index}
-            colour={checkValidSquare(index) ? "green" : "white"}
+            colour={validSquare[index] === 1 ? "green" : "white"}
+            validDrop={validSquare[index] === 1}
           >
             {renderPiece(index)}
           </Square>
         );
       })}
-    </div>
-  );
-};
-
-export const PieceTile: React.FC<{
-  type: PieceType;
-  colour: Colour;
-  id: number;
-  onDrag: any;
-}> = props => {
-  const type =
-    props.type === PieceType.Master ? "piece--master" : "piece--pupil";
-  const colour = props.colour === Colour.Black ? "piece--blue" : "piece--red";
-
-  const currentCard = useSelector<State, State["card"]>(store => store.card);
-
-  const [{ isDragging }, drag] = useDrag({
-    item: { type: props.id.toString() },
-    canDrag: currentCard !== -1,
-    collect: monitor => ({
-      isDragging: !!monitor.isDragging()
-    })
-  });
-  useEffect(() => {
-    props.onDrag(isDragging, props.id);
-  }, [isDragging]);
-  return (
-    <div
-      className={classnames("piece", type, colour, {
-        "piece--is-dragging": isDragging
-      })}
-      ref={drag}
-    >
-      {props.id}
-    </div>
-  );
-};
-
-export const Square: React.FC<{
-  index: number;
-  colour: "green" | "white";
-  children: any;
-}> = props => {
-  const dispatch = useDispatch();
-  const [x, y] = getPosition(props.index);
-
-  const onDrop = (item: any) => {
-    dispatch(movePiece(parseInt(item.type), x, y));
-  };
-
-  const [{ isOver }, drop] = useDrop({
-    accept: ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"],
-    drop: onDrop,
-    collect: monitor => ({
-      isOver: !!monitor.isOver()
-    })
-  });
-  return (
-    <div
-      className={classnames(
-        "tile",
-        { "tile--isOver": isOver },
-        { "tile--isValid": props.colour === "green" }
-      )}
-      ref={drop}
-    >
-      {props.index} ({x}, {y}){props.children}
     </div>
   );
 };
