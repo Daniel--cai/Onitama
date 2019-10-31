@@ -4,7 +4,7 @@ import classnames from "classnames";
 import { useDrop, DropTargetMonitor } from "react-dnd";
 import { useDispatch } from "react-redux";
 import { getPosition } from "../../utils/coordinates";
-import { movePiece, movingPiece } from "../../store/pieces/actions";
+import { movePiece } from "../../store/pieces/actions";
 
 export const Square: React.FC<{
   index: number;

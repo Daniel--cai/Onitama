@@ -121,7 +121,7 @@ export const Eel = [
     0, 0, 0, 0, 0
 ]
 // prettier-ignore
-export const Cobra: Card = [
+export const Cobra = [
     0, 0, 0, 0, 0,
     0, 0, 0, 1, 0,
     0, 1, 0, 0, 0,
