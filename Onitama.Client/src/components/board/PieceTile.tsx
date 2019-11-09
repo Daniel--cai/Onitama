@@ -16,11 +16,11 @@ export const PieceTile: React.FC<{
     props.type === PieceType.Master ? "piece--master" : "piece--pupil";
   const colour = props.colour === Colour.Black ? "piece--blue" : "piece--red";
 
-  const currentCard = useSelector<State, State["card"]>(store => store.card);
+  const card = useSelector<State, State["card"]>(store => store.card);
 
   const [{ isDragging }, drag] = useDrag({
     item: { type: props.id.toString() },
-    canDrag: currentCard !== -1,
+    canDrag: card.selected !== -1,
     collect: monitor => ({
       isDragging: !!monitor.isDragging()
     })

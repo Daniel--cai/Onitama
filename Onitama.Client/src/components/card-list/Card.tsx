@@ -5,16 +5,22 @@ export const Card: React.FC<{
   card: number[];
   active: boolean;
   onClick: any;
+  disabled: boolean;
+  player: boolean;
 }> = props => {
   return (
     <div
       className={classnames("card", {
-        "card--active": props.active
+        "card--active": props.active,
+        "card--disabled": props.disabled,
+        "card--player": props.player
       })}
     >
       {props.card.map((colour, index) => (
         <div
-          onClick={() => props.onClick()}
+          onClick={() => {
+            if (!props.disabled && props.player) props.onClick();
+          }}
           key={index}
           className={classnames(
             "square",

@@ -4,7 +4,6 @@ import {
   PiecesState,
   MOVING_PIECE
 } from "./types";
-import { Piece } from "./models";
 import { initialise } from "./state";
 
 const initialState = initialise();

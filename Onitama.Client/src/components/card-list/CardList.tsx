@@ -9,7 +9,11 @@ import { Dispatch } from "redux";
 import { CardActionTypes } from "../../store/card/types";
 import "./CardList.scss";
 
-export const CardList: React.FC<{}> = _ => {
+export const CardList: React.FC<{
+  cards: number[];
+  neutral?: number;
+  player: boolean;
+}> = props => {
   const dispatch = useDispatch<Dispatch<CardActionTypes>>();
   const handleClick = useCallback(
     (index: number) => {
@@ -18,16 +22,31 @@ export const CardList: React.FC<{}> = _ => {
     [dispatch]
   );
   const currentCard = useSelector<State, State["card"]>(store => store.card);
+  console.log(props);
   return (
     <div className="card-list">
-      {Cards.map((card, index) => (
+      {props.cards.map(card => {
+        return (
+          <Card
+            key={card}
+            card={Cards[card]}
+            onClick={() => handleClick(card)}
+            active={card === currentCard.selected}
+            disabled={false}
+            player={props.player}
+          />
+        );
+      })}
+      {props.neutral && (
         <Card
-          key={index}
-          card={card}
-          onClick={() => handleClick(index)}
-          active={index === currentCard}
+          key={props.neutral}
+          card={Cards[props.neutral]}
+          onClick={() => {}}
+          active={false}
+          disabled={true}
+          player={false}
         />
-      ))}
+      )}
     </div>
   );
 };

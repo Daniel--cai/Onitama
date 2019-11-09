@@ -1,20 +1,20 @@
 import React from "react";
 import { RouteComponentProps } from "react-router";
-// import Axios from "axios";
 import "./Lobby.scss";
 import { Board } from "../components/board";
-import { DndProvider } from "react-dnd";
-import HTML5Backend from "react-dnd-html5-backend";
+
 import { State } from "../store";
 import { useSelector } from "react-redux";
 import { CardList } from "../components/card-list";
 
 export const Lobby: React.FC<RouteComponentProps<{ code: string }>> = props => {
   const pieces = useSelector((store: State) => store.pieces);
+  const card = useSelector((store: State) => store.card);
   return (
-    <DndProvider backend={HTML5Backend}>
+    <>
+      <CardList cards={card.red} player={false} />
       <Board pieces={pieces.collection} />
-      <CardList />
-    </DndProvider>
+      <CardList cards={card.blue} neutral={card.neutral} player={true} />
+    </>
   );
 };

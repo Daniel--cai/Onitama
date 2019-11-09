@@ -45,7 +45,7 @@ export const Board: React.FC<{ pieces: Piece[] }> = props => {
   }
 
   function getValidSquares(anchorX: number, anchorY: number): number[] {
-    let offsets = getCalculatedOffsets(Cards[card], anchorX, anchorY);
+    let offsets = getCalculatedOffsets(Cards[card.selected], anchorX, anchorY);
     const occupied = pieces.collection.map(piece => getIndex(piece.x, piece.y));
     return [...new Array(25)].map((_, i) =>
       offsets.includes(i) && !occupied.includes(i) ? 1 : 0
@@ -55,10 +55,8 @@ export const Board: React.FC<{ pieces: Piece[] }> = props => {
   useEffect(() => {
     if (!dragging) {
       setValidSquare([]);
-    } else {
-      if (pieces.current) {
-        setValidSquare(getValidSquares(pieces.current.x, pieces.current.y));
-      }
+    } else if (pieces.current) {
+      setValidSquare(getValidSquares(pieces.current.x, pieces.current.y));
     }
   }, [dragging]);
 

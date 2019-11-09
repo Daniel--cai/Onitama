@@ -5,6 +5,7 @@ import { useDrop, DropTargetMonitor } from "react-dnd";
 import { useDispatch } from "react-redux";
 import { getPosition } from "../../utils/coordinates";
 import { movePiece } from "../../store/pieces/actions";
+import { playCard } from "../../store/card/actions";
 
 export const Square: React.FC<{
   index: number;
@@ -16,6 +17,7 @@ export const Square: React.FC<{
   const [x, y] = getPosition(props.index);
 
   const onDrop = (item: any) => {
+    dispatch(playCard(parseInt(item.type)));
     dispatch(movePiece(parseInt(item.type), x, y));
   };
 

@@ -1,16 +1,13 @@
-import * as React from "react";
+import React from "react";
 import {
   render,
   fireEvent,
-  getAllByAltText,
   getByTestId,
-  getByLabelText,
   getByText
 } from "@testing-library/react";
 import { CardList } from "./CardList";
-import { Cards } from "../../constants/Card";
 import configureMockStore, { MockStoreEnhanced } from "redux-mock-store";
-import { selectCard } from "../../store/card/actions";
+
 const mockStore = configureMockStore();
 
 describe("<CardList />", () => {
