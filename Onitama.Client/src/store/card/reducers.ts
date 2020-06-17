@@ -2,9 +2,9 @@ import { CardState, SELECT_CARD, CardActionTypes, PLAY_CARD } from "./types";
 
 const initialState: CardState = {
   selected: -1,
-  blue: [1, 2],
-  red: [3, 4],
-  neutral: 5
+  blue: [4, 6],
+  red: [7, 8],
+  neutral: 10
 };
 
 export function cardReducer(

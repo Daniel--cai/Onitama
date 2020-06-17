@@ -10,7 +10,7 @@ export function initialise(): PiecesState {
     initPiece(2, 0, Colour.White, PieceType.Master),
     initPiece(3, 0, Colour.White, PieceType.Pupil),
     initPiece(4, 0, Colour.White, PieceType.Pupil),
-    initPiece(0, 4, Colour.Black, PieceType.Pupil),
+    initPiece(0, 1, Colour.Black, PieceType.Pupil),
     initPiece(1, 4, Colour.Black, PieceType.Pupil),
     initPiece(2, 4, Colour.Black, PieceType.Master),
     initPiece(3, 4, Colour.Black, PieceType.Pupil),

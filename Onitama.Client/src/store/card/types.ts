@@ -15,7 +15,6 @@ interface SelectCardAction {
 
 interface PlayCardAction {
   type: typeof PLAY_CARD;
-  payload: number;
 }
 
 export type CardActionTypes = SelectCardAction | PlayCardAction;

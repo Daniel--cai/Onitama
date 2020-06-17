@@ -7,9 +7,8 @@ export function selectCard(message: number): CardActionTypes {
   };
 }
 
-export function playCard(message: number): CardActionTypes {
+export function playCard(): CardActionTypes {
   return {
     type: PLAY_CARD,
-    payload: message
   };
 }

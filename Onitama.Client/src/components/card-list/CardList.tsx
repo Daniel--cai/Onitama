@@ -22,7 +22,6 @@ export const CardList: React.FC<{
     [dispatch]
   );
   const currentCard = useSelector<State, State["card"]>(store => store.card);
-  console.log(props);
   return (
     <div className="card-list">
       {props.cards.map(card => {

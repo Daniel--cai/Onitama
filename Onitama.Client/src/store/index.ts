@@ -4,12 +4,14 @@ import { routerMiddleware, connectRouter } from "connected-react-router";
 import thunkMiddleware from "redux-thunk";
 import { piecesReducer } from "./pieces/reducers";
 import { cardReducer } from "./card/reducers";
+import { gameReducer } from "./game/reducers";
 
 export const history = createBrowserHistory();
 const rootReducer = combineReducers({
   pieces: piecesReducer,
   card: cardReducer,
-  router: connectRouter(history)
+  game: gameReducer,
+  router: connectRouter(history),
 });
 
 const createRootReducer = (history: any) => rootReducer;

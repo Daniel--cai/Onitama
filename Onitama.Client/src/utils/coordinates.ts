@@ -20,12 +20,15 @@ export const transposeOffset = (x: number, y: number) => {
 export const isValidSquare = (x: number, y: number, card: number[]) => {
   const [tx, ty] = transposeOffset(x, y);
   if (tx > 0 && tx < 5 && ty > 0 && ty < 5) {
+    console.log(card[getIndex(tx, ty)] === 1);
     return card[getIndex(tx, ty)] === 1;
   }
+  console.log(false);
   return false;
 };
 
 export const getCardOffsets = (card: number[]): number[][] => {
+  if (!card) return [];
   const offsets: number[][] = [];
   for (let i = 0; i < card.length; i++) {
     if (card[i] === 1) {
@@ -37,7 +40,7 @@ export const getCardOffsets = (card: number[]): number[][] => {
 };
 
 export const getCalculatedOffsets = (card: number[], x: number, y: number) => {
-  return getCardOffsets(card).map(offset => {
+  return getCardOffsets(card).map((offset) => {
     return getIndex(x + offset[0], y + offset[1]);
   });
 };
