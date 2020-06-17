@@ -1,6 +1,6 @@
 import { GameActionTypes, GameState, PLAY_TURN } from "./types";
 import { initialise } from "./state";
-const initialState = initialise();
+export const initialState = initialise();
 
 export function gameReducer(
   state: GameState = initialState,

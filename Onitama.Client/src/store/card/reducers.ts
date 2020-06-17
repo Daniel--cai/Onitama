@@ -1,6 +1,6 @@
 import { CardState, SELECT_CARD, CardActionTypes, PLAY_CARD } from "./types";
 
-const initialState: CardState = {
+export const initialState: CardState = {
   selected: -1,
   blue: [4, 6],
   red: [7, 8],

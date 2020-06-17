@@ -14,7 +14,7 @@ const rootReducer = combineReducers({
   router: connectRouter(history),
 });
 
-const createRootReducer = (history: any) => rootReducer;
+export const createRootReducer = (history: any) => rootReducer;
 export type State = ReturnType<typeof rootReducer>;
 
 export function configureStore() {

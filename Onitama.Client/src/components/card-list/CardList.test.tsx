@@ -3,25 +3,29 @@ import {
   render,
   fireEvent,
   getByTestId,
-  getByText
+  getByText,
 } from "@testing-library/react";
 import { CardList } from "./CardList";
 import configureMockStore, { MockStoreEnhanced } from "redux-mock-store";
 
 const mockStore = configureMockStore();
-
-describe("<CardList />", () => {
+const defaultProps = () => ({
+  cards: [],
+  neutral: 0,
+  player: true,
+});
+describe("<CardList/>", () => {
   let store: MockStoreEnhanced<unknown, {}>;
   beforeEach(() => {
     store = mockStore({ card: [] });
   });
 
   it("renders welcome message", () => {
-    const { getByText } = render(<CardList />);
+    const { getByText } = render(<CardList {...defaultProps()} />);
   });
 
   it("should make card active when clicked", () => {
-    const wrapper = render(<CardList />);
+    const wrapper = render(<CardList {...defaultProps()} />);
     wrapper.findAllByText("li button");
     fireEvent.click(getByText("1"));
     const elem = getByTestId("item");
