@@ -4,5 +4,5 @@ import { Colour } from "../pieces/models";
 
 export function initialise(): GameState {
   const history: Move[] = [];
-  return { history, turn: 0, player: Colour.Black };
+  return { history, turn: 0, player: Colour.Black, players: [], loaded: false };
 }

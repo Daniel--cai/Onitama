@@ -1,4 +1,4 @@
-import { Move } from "./models";
+import { Move, Player } from "./models";
 import { Colour } from "../pieces/models";
 
 export const PLAY_TURN = "PLAY_TURN";
@@ -7,6 +7,8 @@ export interface GameState {
   history: Move[];
   turn: number;
   player: Colour;
+  players: Player[];
+  loaded: boolean;
 }
 
 interface PlayTurnAction {

@@ -40,7 +40,6 @@ export function piecesReducer(
         current: undefined,
       };
     case MOVING_PIECE:
-      console.log("movigin piece", action.payload);
       return {
         ...state,
         current: state.collection.find((piece) => piece.id === action.payload),

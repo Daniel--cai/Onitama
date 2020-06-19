@@ -28,7 +28,6 @@ export const Board: React.FC<{ pieces: Piece[] }> = (props) => {
     const piece = props.pieces.find((piece) => piece.x === x && piece.y === y);
 
     function handleDragging(isDragging: boolean, index = -1) {
-      console.log("draggin:", isDragging);
       setDragging(isDragging);
       dispatch(movingPiece(index));
     }
@@ -65,14 +64,11 @@ export const Board: React.FC<{ pieces: Piece[] }> = (props) => {
   }
   useEffect(() => {
     if (!dragging || !pieces.current) {
-      console.log("reset");
       setValidSquare([]);
     } else if (pieces.current) {
-      console.log("current");
       setValidSquare(getValidSquares(pieces.current.x, pieces.current.y));
     }
   }, [dragging, pieces.current]);
-  console.log(game);
   return (
     <div className="board">
       {[...Array(25)].map((_, index) => {
@@ -90,3 +86,5 @@ export const Board: React.FC<{ pieces: Piece[] }> = (props) => {
     </div>
   );
 };
+
+export default Board;

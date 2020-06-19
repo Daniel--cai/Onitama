@@ -1,14 +1,11 @@
 import * as React from "react";
 import { render } from "../../store/test/testutils";
-import { Board } from "./Board";
-import * as ReactRedux from "react-redux";
-import { createStore } from "redux";
-import { mockState } from "../../store/test/mockState";
-
-jest.mock("react-redux", () => ({
-  useDispatch: jest.fn((fn) => fn()),
-}));
+import Board from "./Board";
+import '@testing-library/jest-dom/extend-expect'
 
 test("renders ", () => {
-  render(<Board pieces={[]} />);
+  const component = <Board pieces={[]} />;
+  console.log(component);
+  console.log('test code ---')
+  render(component);
 });

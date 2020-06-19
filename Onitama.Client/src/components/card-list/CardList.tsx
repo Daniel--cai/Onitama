@@ -13,7 +13,7 @@ export const CardList: React.FC<{
   cards: number[];
   neutral?: number;
   player: boolean;
-}> = props => {
+}> = (props) => {
   const dispatch = useDispatch<Dispatch<CardActionTypes>>();
   const handleClick = useCallback(
     (index: number) => {
@@ -21,10 +21,11 @@ export const CardList: React.FC<{
     },
     [dispatch]
   );
-  const currentCard = useSelector<State, State["card"]>(store => store.card);
+  const currentCard = useSelector<State, State["card"]>((store) => store.card);
+
   return (
     <div className="card-list">
-      {props.cards.map(card => {
+      {props.cards.map((card) => {
         return (
           <Card
             key={card}
@@ -36,7 +37,7 @@ export const CardList: React.FC<{
           />
         );
       })}
-      {props.neutral && (
+      {props.neutral != null && (
         <Card
           key={props.neutral}
           card={Cards[props.neutral]}
@@ -49,3 +50,5 @@ export const CardList: React.FC<{
     </div>
   );
 };
+
+export default CardList;

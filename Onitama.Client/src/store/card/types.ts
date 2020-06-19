@@ -7,6 +7,7 @@ export interface CardState {
 
 export const SELECT_CARD = "SELECT_CARD";
 export const PLAY_CARD = "PLAY_CARD";
+export const INITIALISE = "INITIALISE";
 
 interface SelectCardAction {
   type: typeof SELECT_CARD;
@@ -17,4 +18,12 @@ interface PlayCardAction {
   type: typeof PLAY_CARD;
 }
 
-export type CardActionTypes = SelectCardAction | PlayCardAction;
+interface InitialiseAction {
+  type: typeof INITIALISE;
+  config: number[];
+}
+
+export type CardActionTypes =
+  | SelectCardAction
+  | PlayCardAction
+  | InitialiseAction;

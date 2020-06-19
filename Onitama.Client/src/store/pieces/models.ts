@@ -1,11 +1,12 @@
 export enum PieceType {
   Pupil,
-  Master
+  Master,
 }
 
 export enum Colour {
+  Neutral,
   White,
-  Black
+  Black,
 }
 
 export interface Tile {

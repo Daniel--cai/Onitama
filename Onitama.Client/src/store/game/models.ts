@@ -5,3 +5,19 @@ export interface Move {
   y: number;
   card: number;
 }
+
+export interface Game {
+  players: Player[];
+  roundNumber: number;
+  gameState: GameState;
+  currentStoryTeller: string;
+  storyCard: number;
+  story: string;
+  cards: number[];
+  hand: number[];
+}
+
+export interface Player {
+  name: string;
+}
+

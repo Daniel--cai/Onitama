@@ -1,32 +1,36 @@
 import { createStore, applyMiddleware, compose, combineReducers } from "redux";
-import { createBrowserHistory } from "history";
+import { createBrowserHistory, History } from "history";
 import { routerMiddleware, connectRouter } from "connected-react-router";
 import thunkMiddleware from "redux-thunk";
 import { piecesReducer } from "./pieces/reducers";
 import { cardReducer } from "./card/reducers";
 import { gameReducer } from "./game/reducers";
+import { playerReducer } from "./player/reducers";
 
 export const history = createBrowserHistory();
 const rootReducer = combineReducers({
   pieces: piecesReducer,
   card: cardReducer,
   game: gameReducer,
+  player: playerReducer,
   router: connectRouter(history),
 });
 
-export const createRootReducer = (history: any) => rootReducer;
-export type State = ReturnType<typeof rootReducer>;
+export const createRootReducer = (history: History) => rootReducer;
+export type State = Omit<ReturnType<typeof rootReducer>, "router">;
 
-export function configureStore() {
+export function configureStore(
+  initialState?: State,
+  history: History<any> = createBrowserHistory()
+) {
   const store = createStore(
     createRootReducer(history),
-    compose(applyMiddleware(routerMiddleware(history), thunkMiddleware))
+    initialState,
+    compose(applyMiddleware(thunkMiddleware))
   );
 
   if (process.env.NODE_ENV !== "production" && module.hot) {
-    module.hot.accept("./", () =>
-      store.replaceReducer(createRootReducer(history))
-    );
+    module.hot.accept("./", () => store.replaceReducer(rootReducer));
   }
 
   return store;

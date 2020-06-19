@@ -20,10 +20,8 @@ export const transposeOffset = (x: number, y: number) => {
 export const isValidSquare = (x: number, y: number, card: number[]) => {
   const [tx, ty] = transposeOffset(x, y);
   if (tx > 0 && tx < 5 && ty > 0 && ty < 5) {
-    console.log(card[getIndex(tx, ty)] === 1);
     return card[getIndex(tx, ty)] === 1;
   }
-  console.log(false);
   return false;
 };
 
