@@ -21,9 +21,8 @@ namespace Onitama.Server.RealTime
         {
             await base.OnConnectedAsync();
             var name = Context.GetHttpContext().Request.Query["name"].ToString();
-            var code = Context.GetHttpContext().Request.Query["code"].ToString();
             var connectionId = Context.ConnectionId;
-            await _mediator.Publish(new PlayerConnectedEvent { Player = name, Code = code, Identifier = connectionId });
+            await _mediator.Publish(new PlayerConnectedEvent { Player = name, Identifier = connectionId });
             
         }
         public override async Task OnDisconnectedAsync(Exception exception)

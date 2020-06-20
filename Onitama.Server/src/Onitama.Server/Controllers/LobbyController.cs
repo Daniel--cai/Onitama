@@ -50,6 +50,13 @@ namespace Onitama.Server.Controllers
             return lobby.Code;
         }
 
+        [HttpPost("joinLobby")]
+        public async Task<ActionResult> JoinLobby(JoinLobbyCommand command)
+        {
+            var lobby = await _mediator.Send(command);
+            return Ok();
+        }
+
         [HttpPost("startGame")]
         public async Task<ActionResult> StartGame(StartLobbyCommand command)
         {

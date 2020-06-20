@@ -11,8 +11,6 @@ export interface Game {
   roundNumber: number;
   gameState: GameState;
   currentStoryTeller: string;
-  storyCard: number;
-  story: string;
   cards: number[];
   hand: number[];
 }

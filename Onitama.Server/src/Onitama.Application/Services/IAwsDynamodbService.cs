@@ -11,7 +11,7 @@ namespace Onitama.Application.Services
         void AddLobby(Lobby lobby);
         Task<Lobby> GetLobbyByCode(string code);
         Task<PlayerConnection> GetPlayerConnectionByIdentifier(string identifier);
-        Task AddPlayerConnection(string name, string identifier, string code);
+        Task AddPlayerConnection(string name, string identifier);
         Task RemovePlayerConnection(string identifier);
         Task SaveLobby(Lobby lobby);
     }

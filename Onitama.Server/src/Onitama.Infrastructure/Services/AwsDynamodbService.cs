@@ -17,7 +17,8 @@ namespace Onitama.Infrastructure.Services
             Lobbies.Add(lobby);
         }
 
-        public Task AddPlayerConnection(string name, string identifier, string code)
+
+        public Task AddPlayerConnection(string name, string identifier)
         {
             PlayerConnections.Add(new PlayerConnection { Name = name, Identifier = identifier, Code = code });
             return Task.FromResult(0);
