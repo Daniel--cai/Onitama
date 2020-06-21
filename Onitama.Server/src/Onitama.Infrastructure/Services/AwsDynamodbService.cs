@@ -20,7 +20,7 @@ namespace Onitama.Infrastructure.Services
 
         public Task AddPlayerConnection(string name, string identifier)
         {
-            PlayerConnections.Add(new PlayerConnection { Name = name, Identifier = identifier, Code = code });
+            PlayerConnections.Add(new PlayerConnection { Name = name, Identifier = identifier});
             return Task.FromResult(0);
         }
 

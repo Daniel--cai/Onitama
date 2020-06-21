@@ -8,6 +8,5 @@ namespace Onitama.Domain.Aggregates
     {
         public string Name { get; set; }
         public string Identifier { get; set; }
-        public string Code { get; set; }
     }
 }
