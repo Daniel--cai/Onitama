@@ -12,12 +12,12 @@ namespace Onitama.Application.Handlers
     public class CreateLobbyCommandHandler : IRequestHandler<CreateLobbyCommand, CreateLobbyResponse>
     {
         private readonly IMediator _mediator;
-        private readonly IAwsDynamodbService _awsDynamodbService;
+        private readonly ILobbyRepository _lobbyRepository;
 
-        public CreateLobbyCommandHandler(IMediator mediator, IAwsDynamodbService awsDynamodbService)
+        public CreateLobbyCommandHandler(IMediator mediator, ILobbyRepository lobbyRepository)
         {
             _mediator = mediator;
-            _awsDynamodbService = awsDynamodbService;
+            _lobbyRepository = lobbyRepository;
         }
 
         public Task<CreateLobbyResponse> Handle(CreateLobbyCommand request, CancellationToken cancellationToken)
@@ -25,7 +25,7 @@ namespace Onitama.Application.Handlers
             var lobby = new Lobby();
             //var player = new Domain.Entities.Player(request.Name);
             //lobby.Players.Add(player);
-            _awsDynamodbService.AddLobby(lobby);
+            _lobbyRepository.AddLobby(lobby);
             return Task.FromResult(new CreateLobbyResponse
             {
                 Code = lobby.Code

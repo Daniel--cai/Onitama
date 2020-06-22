@@ -18,6 +18,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Serilog;
+using Onitama.Infrastructure.Configuration;
 
 namespace Onitama.Server
 {
@@ -36,14 +37,8 @@ namespace Onitama.Server
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             services.AddHealthChecks();
             services.AddSignalR();
-            services.AddScoped<IAwsDynamodbClient, AwsDynamodbClient>();
-            services.AddScoped<IAwsDynamodbService, AwsDynamodbService>();
-            services.AddTransient<IScoringRule, BonusRule>();
-            services.AddTransient<IScoringRule, StoryTellerRule>();
-            services.AddTransient<IScoringRule, CorrectRule>();
-            services.AddTransient<IScoreService, ScoreService>();
             services.AddMediatR(typeof (CreateLobbyCommand), typeof(LobbyJoinedEvent),typeof(LobbyEventsClientDispatcher));
-
+            services.Configure<FirestoreConfig>(Configuration.GetSection("Firestore"));
         }
 
         private static IServiceProvider BuildDependencyInjectionProvider(IServiceCollection services)

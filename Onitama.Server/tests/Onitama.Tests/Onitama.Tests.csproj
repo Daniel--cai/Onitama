@@ -1,14 +1,13 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
 
     <IsPackable>false</IsPackable>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="AutoFixture" Version="4.11.0" />
-    <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.SignalR" Version="1.1.0" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="2.2.0" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.9.0" />
@@ -16,12 +15,24 @@
     <PackageReference Include="Shouldly" Version="3.0.2" />
     <PackageReference Include="xunit" Version="2.4.0" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.4.0" />
+    <PackageReference Include="FluentAssertions" Version="5.10.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Onitama.Application\Onitama.Application.csproj" />
+    <Folder Include="Core\Infrastructure\" />
+    <Folder Include="Core\Infrastructure\Mapper\" />
+    <Folder Include="Core\Fixture\" />
+    <Folder Include="Core\Builders\" />
+    <Folder Include="Integration\CommandHandlers\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Core\Fixture\LobbyFixture.cs" />
+    <Compile Remove="Core\Fixture\LobbyFixture.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Onitama.Infrastructure\Onitama.Infrastructure.csproj" />
     <ProjectReference Include="..\..\src\Onitama.Domain\Onitama.Domain.csproj" />
+    <ProjectReference Include="..\..\src\Onitama.Application\Onitama.Application.csproj" />
     <ProjectReference Include="..\..\src\Onitama.Server\Onitama.Server.csproj" />
   </ItemGroup>
-
 </Project>

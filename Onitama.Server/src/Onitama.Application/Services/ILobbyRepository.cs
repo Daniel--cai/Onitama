@@ -1,10 +1,7 @@
-﻿using Dixit.Domain.Aggregates;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Onitama.Domain.Aggregates;
 using System.Threading.Tasks;
 
-namespace Dixit.Application.Services
+namespace Onitama.Application.Services
 {
     public interface ILobbyRepository
     {

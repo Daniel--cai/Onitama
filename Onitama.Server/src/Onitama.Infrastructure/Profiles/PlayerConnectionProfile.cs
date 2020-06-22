@@ -4,7 +4,7 @@ using AutoMapper;
 using Onitama.Infrastructure;
 using Onitama.Domain;
 
-namespace Dixit.Infrastructure.Profiles
+namespace Onitama.Infrastructure.Profiles
 {
     public class PlayerConnectionProfile : Profile
     {

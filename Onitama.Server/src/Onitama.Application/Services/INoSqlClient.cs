@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Onitama.ApplicationApplication.Services
+namespace Onitama.Application.Services
 {
     public interface INoSqlClient<T> : IReadOnlyNoSqlClient<T>, IWriteOnlyNoSqlClient<T>
     {

@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
@@ -11,6 +11,7 @@
     <PackageReference Include="Google.Cloud.Firestore" Version="2.1.0" />
     <PackageReference Include="Microsoft.Extensions.Options" Version="3.1.5" />
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="7.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="3.1.5" />
   </ItemGroup>
 
   <ItemGroup>
@@ -21,5 +22,7 @@
   <ItemGroup>
     <Folder Include="Mapper\" />
     <Folder Include="Profiles\" />
+    <Folder Include="Services\" />
+    <Folder Include="Configuration\" />
   </ItemGroup>
 </Project>
