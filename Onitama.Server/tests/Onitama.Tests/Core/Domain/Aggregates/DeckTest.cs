@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Text;
 using Xunit;
 
-namespace Onitama.Tests.Core.Domain.Aggregates
+namespace Onitama.Tests.Core.Domain.Entities
 {
     public class DeckTest
     {

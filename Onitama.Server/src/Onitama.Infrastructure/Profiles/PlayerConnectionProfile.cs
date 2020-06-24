@@ -10,7 +10,7 @@ namespace Onitama.Infrastructure.Profiles
     {
         public PlayerConnectionProfile()
         {
-            CreateMap<Onitama.Domain.Aggregates.PlayerConnection, Onitama.Infrastructure.Data.Model.PlayerConnection>().ReverseMap();
+            CreateMap<Onitama.Domain.Entities.PlayerConnection, Onitama.Infrastructure.Data.Model.PlayerConnection>().ReverseMap();
         }
     }
 }

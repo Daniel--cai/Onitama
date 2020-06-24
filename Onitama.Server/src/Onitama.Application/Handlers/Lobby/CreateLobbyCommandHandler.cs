@@ -2,7 +2,7 @@
 using Onitama.Application.Events;
 using Onitama.Application.Responses;
 using Onitama.Application.Services;
-using Onitama.Domain.Aggregates;
+using Onitama.Domain.Entities;
 using MediatR;
 using System.Threading;
 using System.Threading.Tasks;

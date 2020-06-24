@@ -29,11 +29,11 @@ namespace Onitama.Infrastructure.Services
             return id;
         }
 
-        public async Task<Domain.Aggregates.PlayerConnection> GetPlayerConnectionByIdentifier(string identifier)
+        public async Task<Domain.Entities.PlayerConnection> GetPlayerConnectionByIdentifier(string identifier)
         {
             var connection = await _client.GetDocumentsByField("Identifier", identifier);
             var playerConnection = connection.FirstOrDefault();
-            return _mapper.Map<Domain.Aggregates.PlayerConnection>(playerConnection);
+            return _mapper.Map<Domain.Entities.PlayerConnection>(playerConnection);
         }
 
         public async Task RemovePlayerConnection(string identifier)

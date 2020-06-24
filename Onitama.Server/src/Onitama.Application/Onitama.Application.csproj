@@ -16,6 +16,8 @@
     <Folder Include="Commands\Game\" />
     <Folder Include="Responses\Game\" />
     <Folder Include="Responses\Player\" />
+    <Folder Include="Common\" />
+    <Folder Include="Common\Interfaces\" />
   </ItemGroup>
 
 </Project>

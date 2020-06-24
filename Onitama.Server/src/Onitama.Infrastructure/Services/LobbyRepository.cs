@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using Onitama.Application.Services;
-using Onitama.Domain.Aggregates;
+using Onitama.Domain.Entities;
 using Onitama.Infrastructure.Mapper;
 
 namespace Onitama.Infrastructure.Services

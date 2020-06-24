@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using Onitama.Domain.Aggregates;
+using Onitama.Domain.Entities;
 
 namespace Onitama.Application.Queries
 {

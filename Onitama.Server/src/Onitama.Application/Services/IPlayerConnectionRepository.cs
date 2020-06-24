@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
-using Onitama.Domain.Aggregates;
+using Onitama.Domain.Entities;
 
 namespace Onitama.Application.Services
 {

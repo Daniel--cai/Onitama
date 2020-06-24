@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Onitama.Application.Commands;
 using Onitama.Application.Queries;
-using Onitama.Domain.Aggregates;
+using Onitama.Domain.Entities;
 using Onitama.Server.DTO;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;

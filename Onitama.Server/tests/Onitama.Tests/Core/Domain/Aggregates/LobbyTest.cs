@@ -1,4 +1,4 @@
-﻿using Onitama.Domain.Aggregates;
+﻿using Onitama.Domain.Entities;
 using Onitama.Domain.Entities;
 using Onitama.Domain.ValueObjects;
 using System;
@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using Xunit;
 
-namespace Onitama.Tests.Core.Domain.Aggregates
+namespace Onitama.Tests.Core.Domain.Entities
 {
 
     public class LobbyTest

@@ -1,7 +1,7 @@
 ﻿using Onitama.Application.Commands;
 using Onitama.Application.Events;
 using Onitama.Application.Services;
-using Onitama.Domain.Aggregates;
+using Onitama.Domain.Entities;
 using Onitama.Domain.Interfaces;
 using MediatR;
 using System.Linq;

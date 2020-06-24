@@ -22,7 +22,7 @@ namespace Onitama.Infrastructure
             services.AddAutoMapper(typeof(LobbyProfile), typeof(PlayerConnectionProfile));
 
             services.AddTransient<ILobbyMapper, LobbyMapper>();
-            services.AddTransient<IMapper<Domain.Aggregates.Lobby, Infrastructure.Data.Model.Lobby>, LobbyMapper>();
+            services.AddTransient<IMapper<Domain.Entities.Lobby, Infrastructure.Data.Model.Lobby>, LobbyMapper>();
             return services;
         }
     }

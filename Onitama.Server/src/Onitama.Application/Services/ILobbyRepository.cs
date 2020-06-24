@@ -1,4 +1,4 @@
-﻿using Onitama.Domain.Aggregates;
+﻿using Onitama.Domain.Entities;
 using System.Threading.Tasks;
 
 namespace Onitama.Application.Services

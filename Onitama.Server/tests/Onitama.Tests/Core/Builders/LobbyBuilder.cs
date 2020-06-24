@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Onitama.Domain.Aggregates;
+using Onitama.Domain.Entities;
 using Onitama.Domain.Entities;
 
 namespace Onitama.Tests.Core.Builders
