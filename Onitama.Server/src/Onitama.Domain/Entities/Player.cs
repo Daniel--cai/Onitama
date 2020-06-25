@@ -8,13 +8,6 @@ namespace Onitama.Domain.Entities
         public string Name { get; set; }
         public string Identifier { get; set; }
         public bool Connected { get; set; }
-
-        public Player(string name, string identifier)
-        {
-            Name = name;
-            Identifier = identifier;
-            Connected = true;
-        }
      
         public override bool Equals(object obj)
         {

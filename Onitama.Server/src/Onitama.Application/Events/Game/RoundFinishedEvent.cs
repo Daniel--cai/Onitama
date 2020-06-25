@@ -1,9 +1,7 @@
 ﻿using Onitama.Domain.Entities;
 using Onitama.Domain.ValueObjects;
 using MediatR;
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Onitama.Application.Events
 {
@@ -11,8 +9,6 @@ namespace Onitama.Application.Events
     {
         public string Code { get; set; }
         public List<ScoreCard> PlayerScores { get; set; }
-        public List<Vote> Votes { get; set; }
         public Player NextStoryTeller { get; set; }
-        public Card StoryCard { get; set; }
     }
 }

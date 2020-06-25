@@ -18,6 +18,7 @@
     <Folder Include="Responses\Player\" />
     <Folder Include="Common\" />
     <Folder Include="Common\Interfaces\" />
+    <Folder Include="Handlers\Player\" />
   </ItemGroup>
 
 </Project>

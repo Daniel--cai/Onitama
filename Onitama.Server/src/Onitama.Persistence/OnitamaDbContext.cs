@@ -4,10 +4,11 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Onitama.Application.Common.Interfaces;
 using Onitama.Domain.Entities;
+using Onitama.Domain.ValueObjects;
 
 namespace Onitama.Persistence
 {
-    public class OnitamaDbContext : DbContext, IOnitamaContext
+    public class OnitamaDbContext : DbContext, IOnitamaDbContext
     {
         public OnitamaDbContext(DbContextOptions<OnitamaDbContext> options)
           : base(options)

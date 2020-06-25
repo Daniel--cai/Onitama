@@ -5,10 +5,6 @@ using Autofac.Extensions.DependencyInjection;
 using Onitama.Application.Commands;
 using Onitama.Application.Events;
 using Onitama.Application.Services;
-using Onitama.Application.SharedKernel;
-using Onitama.Domain.Interfaces;
-using Onitama.Domain.Services;
-using Onitama.Domain.Services.Rules;
 using Onitama.Infrastructure.Services;
 using Onitama.Server.RealTime;
 using MediatR;
@@ -50,7 +46,6 @@ namespace Onitama.Server
 
             // TODO: Add Registry Classes to eliminate reference to Infrastructure
             Assembly webAssembly = Assembly.GetExecutingAssembly();
-            Assembly coreAssembly = Assembly.GetAssembly(typeof(BaseEntity));
             //Assembly infrastructureAssembly = Assembly.GetAssembly(typeof(EfRepository)); // TODO: Move to Infrastucture Registry
             //builder.RegisterAssemblyTypes(webAssembly, coreAssembly, infrastructureAssembly).AsImplementedInterfaces();
 

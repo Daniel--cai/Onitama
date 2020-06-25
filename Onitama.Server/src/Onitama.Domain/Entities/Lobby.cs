@@ -1,5 +1,4 @@
 ﻿using Onitama.Domain.Entities;
-using Onitama.Domain.Interfaces;
 using Onitama.Domain.ValueObjects;
 using System;
 using System.Collections.Generic;

@@ -19,6 +19,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Onitama.Domain", "src\Onita
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Onitama.Persistence", "src\Onitama.Persistence\Onitama.Persistence.csproj", "{BB82C794-33DA-43F7-B2FB-0AEDC8826E3A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Onitama.Domain.UnitTests", "tests\Onitama.Tests\Onitama.Domain.Tests\Onitama.Domain.UnitTests.csproj", "{86C05369-A987-4CBD-8F19-3650B709FC98}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -49,6 +51,10 @@ Global
 		{BB82C794-33DA-43F7-B2FB-0AEDC8826E3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BB82C794-33DA-43F7-B2FB-0AEDC8826E3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BB82C794-33DA-43F7-B2FB-0AEDC8826E3A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86C05369-A987-4CBD-8F19-3650B709FC98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86C05369-A987-4CBD-8F19-3650B709FC98}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86C05369-A987-4CBD-8F19-3650B709FC98}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86C05369-A987-4CBD-8F19-3650B709FC98}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -60,6 +66,7 @@ Global
 		{FD079F2F-637B-4DC2-A944-384FEEC530E2} = {746684D7-1E0B-49CA-815D-3F9B4E4C2E11}
 		{234B2A66-CF8F-40C3-B2C6-158C3DC1ACD1} = {746684D7-1E0B-49CA-815D-3F9B4E4C2E11}
 		{BB82C794-33DA-43F7-B2FB-0AEDC8826E3A} = {746684D7-1E0B-49CA-815D-3F9B4E4C2E11}
+		{86C05369-A987-4CBD-8F19-3650B709FC98} = {D3B7ED09-0178-4AFC-9F22-F7AFC5A491DE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7A3097E1-4EAB-4091-A527-40C54712EE52}

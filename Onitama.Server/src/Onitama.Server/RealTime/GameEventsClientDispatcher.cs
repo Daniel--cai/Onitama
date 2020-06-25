@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Onitama.Server.RealTime
 {
-    public class GameEventsClientDispatcher : INotificationHandler<StoryRevealedEvent>, INotificationHandler<RoundFinishedEvent>
+    public class GameEventsClientDispatcher : INotificationHandler<RoundFinishedEvent>
     {
         private readonly IHubContext<LobbyEventsClientHub, IEventsClient> _hubContext;
 

@@ -22,7 +22,7 @@ namespace Onitama.Infrastructure.Data.Model
         [FirestoreProperty]
         public string Players { get; set; }
         [FirestoreProperty]
-        public string GameState { get; set; }
+        public int GameState { get; set; }
         [FirestoreProperty]
         public DateTime DateCreated { get; set; }
     }

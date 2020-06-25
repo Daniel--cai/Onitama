@@ -27,11 +27,11 @@ namespace Onitama.Application.Handlers
         public async Task Handle(PlayerDisconnectedEvent notification, CancellationToken cancellationToken)
         {
             var connection = await _playerConnectionRepository.GetPlayerConnectionByIdentifier(notification.Identifier);
-            var lobby = await _lobbyRepository.GetLobbyByCode(connection.Code);
-            var disconnected = lobby.PlayerDisconnected(connection.Name);
+            var lobby = await _lobbyRepository.GetLobbyByCode("1234");
+            // var disconnected = lobby.PlayerDisconnected(connection.Name);
             await _lobbyRepository.SaveLobby(lobby);
             await _playerConnectionRepository.RemovePlayerConnection(notification.Identifier);
-            await _mediator.Publish(new LobbyLeaveEvent { Player = disconnected, Code = lobby.Code });
+            // await _mediator.Publish(new LobbyLeaveEvent { Player = disconnected, Code = lobby.Code });
             
         }
     }

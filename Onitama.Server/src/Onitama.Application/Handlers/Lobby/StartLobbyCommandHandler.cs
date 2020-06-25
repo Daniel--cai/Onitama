@@ -24,21 +24,19 @@ namespace Onitama.Application.Handlers
         public async Task<Unit> Handle(StartLobbyCommand request, CancellationToken cancellationToken)
         {
             var lobby = await _lobbyRepository.GetLobbyByCode(request.Code);
-            lobby.NewRound();
-            lobby.DealDeck();
-            await _lobbyRepository.SaveLobby(lobby);
-            await _mediator.Publish(
-                new LobbyStartedEvent
-                {
-                    Code = request.Code,
-                    StoryTeller = lobby.CurrentStoryTeller,
-                    Players = lobby.ActivePlayers
-                });
+            //lobby.DealDeck();
+            //await _mediator.Publish(
+            //    new LobbyStartedEvent
+            //    {
+            //        Code = request.Code,
+            //        StoryTeller = lobby.CurrentStoryTeller,
+            //        Players = lobby.ActivePlayers
+            //    });
 
-            foreach  (var player in lobby.ActivePlayers)
-            {
-                await _mediator.Publish(new CardDrawnEvent { Code = request.Code, Player = player, Hand = lobby.Deck.Hand(player) });
-            }
+            //foreach  (var player in lobby.ActivePlayers)
+            //{
+            //    await _mediator.Publish(new CardDrawnEvent { Code = request.Code, Player = player, Hand = lobby.Deck.Hand(player) });
+            //}
 
             return Unit.Value;
         }

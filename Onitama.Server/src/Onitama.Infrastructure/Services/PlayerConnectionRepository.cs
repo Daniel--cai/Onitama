@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using AutoMapper;
 using Onitama.Application.Services;
+using Onitama.Domain.Entities;
 
 namespace Onitama.Infrastructure.Services
 {
@@ -29,11 +30,11 @@ namespace Onitama.Infrastructure.Services
             return id;
         }
 
-        public async Task<Domain.Entities.PlayerConnection> GetPlayerConnectionByIdentifier(string identifier)
+        public async Task<Player> GetPlayerConnectionByIdentifier(string identifier)
         {
             var connection = await _client.GetDocumentsByField("Identifier", identifier);
             var playerConnection = connection.FirstOrDefault();
-            return _mapper.Map<Domain.Entities.PlayerConnection>(playerConnection);
+            return _mapper.Map<Player>(playerConnection);
         }
 
         public async Task RemovePlayerConnection(string identifier)
@@ -42,5 +43,6 @@ namespace Onitama.Infrastructure.Services
             await _client.DeleteDocument(connection.FirstOrDefault());
         }
 
+ 
     }
 }

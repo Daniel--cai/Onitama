@@ -267,3 +267,4 @@ terraform.tfvars
 staging_issuer.yml
 prod_issuer.yml
 .DS_Store
+Onitama.GoServer/
