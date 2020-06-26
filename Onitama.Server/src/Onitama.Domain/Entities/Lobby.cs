@@ -14,9 +14,12 @@ namespace Onitama.Domain.Entities
         public List<Round> Rounds { get; set; }
         public int Blue { get; set; }
         public Board Board { get; set; }
-        public List<Player> Players { get; set; }
+        public IEnumerable<Player> Players { get; set; }
         public State GameState { get; set; }
         public DateTime DateCreated { get; set; }
+        public IEnumerable<Card> BlueCards { get; set; }
+        public IEnumerable<Card> RedCards { get; set; }
+        public Card NeutralCard { get; set; }
 
         public Lobby()
         {

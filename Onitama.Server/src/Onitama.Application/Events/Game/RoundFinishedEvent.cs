@@ -8,7 +8,6 @@ namespace Onitama.Application.Events
     public class RoundFinishedEvent : INotification
     {
         public string Code { get; set; }
-        public List<ScoreCard> PlayerScores { get; set; }
         public Player NextStoryTeller { get; set; }
     }
 }

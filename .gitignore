@@ -268,3 +268,4 @@ staging_issuer.yml
 prod_issuer.yml
 .DS_Store
 Onitama.GoServer/
+mono_crash.*

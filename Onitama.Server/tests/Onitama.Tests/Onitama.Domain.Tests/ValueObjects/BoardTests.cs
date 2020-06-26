@@ -16,8 +16,8 @@ namespace Onitama.Domain.Tests
             var board = Board.For(configuration);
 
             // act
-            var bluePieces = board.Pieces.Where(piece => piece.Colour == (int)Colour.Blue);
-            var redPieces = board.Pieces.Where(piece => piece.Colour == (int)Colour.Red);
+            var bluePieces = board.Pieces.Where(piece => piece.Colour == Colour.Blue);
+            var redPieces = board.Pieces.Where(piece => piece.Colour == Colour.Red);
 
             // assert
 
@@ -35,14 +35,12 @@ namespace Onitama.Domain.Tests
             var board = Board.For(configuration);
 
             // act
-            var blueMaster = board.Pieces.FirstOrDefault(piece => piece.Colour == (int)Colour.Blue && piece.Master);
-            var redMaster = board.Pieces.FirstOrDefault(piece => piece.Colour == (int)Colour.Red && piece.Master);
+            var blueMaster = board.Pieces.FirstOrDefault(piece => piece.Colour == Colour.Blue && piece.Master);
+            var redMaster = board.Pieces.FirstOrDefault(piece => piece.Colour == Colour.Red && piece.Master);
 
             // assert
-            Assert.Equal(blueX, blueMaster.X);
-            Assert.Equal(blueY, blueMaster.Y);
-            Assert.Equal(redX, redMaster.X);
-            Assert.Equal(redY, redMaster.Y);
+            Assert.Equal(new Coordinate(blueX, blueY), blueMaster.Coordinate);
+            Assert.Equal(new Coordinate(redX, redY), redMaster.Coordinate);
 
         }
 
