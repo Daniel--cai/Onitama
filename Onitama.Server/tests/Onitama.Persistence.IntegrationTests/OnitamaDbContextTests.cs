@@ -79,6 +79,7 @@ namespace Onitama.Persistence.IntegrationTests
             result.BlueCards.ShouldBe(expected.BlueCards);
             result.RedCards.ShouldBe(expected.RedCards);
             result.Rounds.ShouldBe(expected.Rounds);
+            result.DateCreated.ShouldBe(_dateTime);
         }
 
         [Fact]
@@ -99,6 +100,7 @@ namespace Onitama.Persistence.IntegrationTests
             var result = await _sut.Player.FirstOrDefaultAsync(p => p.Name == expected.Name);
 
             result.ShouldBe(expected);
+            result.DateCreated.ShouldBe(_dateTime);
 
         }
 
@@ -132,6 +134,8 @@ namespace Onitama.Persistence.IntegrationTests
             result.ShouldBe(new List<Round> { expectedRoundOne, expectedRoundTwo });
             result[0].RoundId.ShouldNotBe(0);
             result[1].RoundId.ShouldNotBe(0);
+            expectedRoundOne.DateCreated.ShouldBe(_dateTime);
+            expectedRoundTwo.DateCreated.ShouldBe(_dateTime);
         }
 
 
