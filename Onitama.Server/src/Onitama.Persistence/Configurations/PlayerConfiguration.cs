@@ -12,6 +12,9 @@ namespace Onitama.Persistence.Configurations
             builder.Property(e => e.Name).HasColumnName("Name");
             builder.Property(e => e.Identifier).HasColumnName("Identifier");
             builder.Property(e => e.Connected).HasColumnName("Connected");
+            builder.HasOne(y => y.Lobby)
+               .WithMany(x => x.Players)
+               .HasForeignKey(x => x.LobbyId);
         }
     }
 }

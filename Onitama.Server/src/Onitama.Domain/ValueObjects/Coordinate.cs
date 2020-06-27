@@ -23,6 +23,18 @@ namespace Onitama.Domain.ValueObjects
             Y = y;
         }
 
+        public static explicit operator Coordinate(int notation)
+        {
+            return new Coordinate(notation);
+        }
+
+        public static implicit operator int(Coordinate coordinate)
+        {
+            var notation = coordinate.X * BoardConstants.BoardSize + coordinate.Y;
+            return notation;
+        }
+
+
         public override bool Equals(object obj)
         {
             return Equals(obj as Coordinate);

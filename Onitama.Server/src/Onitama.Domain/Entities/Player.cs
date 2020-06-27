@@ -1,13 +1,18 @@
 ﻿using System;
+using Onitama.Domain.Common;
+using Onitama.Domain.ValueObjects;
 
 namespace Onitama.Domain.Entities
 {
-    public class Player : IEquatable<Player>
+    public class Player : AuditableEntity, IEquatable<Player>
     {
         public int PlayerId { get; set; }
         public string Name { get; set; }
         public string Identifier { get; set; }
         public bool Connected { get; set; }
+        public Colour Colour { get; set; }
+        public int LobbyId { get; set; }
+        public Lobby Lobby { get; set; }
      
         public override bool Equals(object obj)
         {

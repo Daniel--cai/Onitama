@@ -17,6 +17,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Onitama.Application\Onitama.Application.csproj" />
     <ProjectReference Include="..\Onitama.Domain\Onitama.Domain.csproj" />
+    <ProjectReference Include="..\Onitama.Common\Onitama.Common.csproj" />
   </ItemGroup>
 
   <ItemGroup>

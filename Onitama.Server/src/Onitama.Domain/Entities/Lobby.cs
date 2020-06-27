@@ -1,4 +1,5 @@
-﻿using Onitama.Domain.Entities;
+﻿using Onitama.Domain.Common;
+using Onitama.Domain.Entities;
 using Onitama.Domain.ValueObjects;
 using System;
 using System.Collections.Generic;
@@ -7,18 +8,16 @@ using System.Text;
 
 namespace Onitama.Domain.Entities
 {
-    public class Lobby
+    public class Lobby : AuditableEntity
     {
         public int LobbyId { get; set; }
         public string Code { get; set; }
         public List<Round> Rounds { get; set; }
-        public int Blue { get; set; }
         public Board Board { get; set; }
-        public IEnumerable<Player> Players { get; set; }
+        public IList<Player> Players { get; set; }
         public State GameState { get; set; }
-        public DateTime DateCreated { get; set; }
-        public IEnumerable<Card> BlueCards { get; set; }
-        public IEnumerable<Card> RedCards { get; set; }
+        public IList<Card> BlueCards { get; set; }
+        public IList<Card> RedCards { get; set; }
         public Card NeutralCard { get; set; }
 
         public Lobby()
@@ -27,113 +26,12 @@ namespace Onitama.Domain.Entities
             Rounds = new List<Round>();
             Players = new List<Player>();
             GameState = State.Lobby;
+            Board = new Board();
+            BlueCards = new List<Card>();
+            RedCards = new List<Card>();
         }
 
-        //private Deck InitializeDeck()
-        //{
-
-        //    var deck = new List<Card>();
-        //    for(var i = 1; i < 50; i++)
-        //    {
-        //        var card = new Card(i);
-        //        deck.Add(card);
-        //    }
-
-        //    return new Deck(deck).Shuffle();
-        //}
-
-        ////aggregate getters
-
-        //public Round CurrentRound => RoundNumber > 0 ? Rounds[RoundNumber - 1] : null;
-
-        //public Player NextStoryTeller => Players[Rounds.Count % Players.Count];
-
-        //public Player CurrentStoryTeller => CurrentRound?.StoryTeller;
-
-        //public Card CurrentStoryCard => CurrentRound?.StoryTellerCard;
-
-        //public string CurrentStory => CurrentRound?.Story;
-
-        //public List<Card> CurrentPlayedCards => Deck.Cards.Where(card => card.RoundSubmitted != 0 && card.RoundSubmitted == RoundNumber).ToList();
-
-        //public List<Vote> CurrentVotes => CurrentRound?.Votes;
-
-        //public bool HasAllPlayersVoted()
-        //{
-        //    return CurrentVotes.Count >= ActivePlayers.Count - 1;
-        //}
-
-        //public List<Player> ActivePlayers => Players.Where(player => player.Connected).ToList();
-
-        //public bool HasAllPlayersPlayed()
-        //{
-        //    return CurrentPlayedCards.Count >= ActivePlayers.Count;
-        //}
-
-        ////utility
-
-        //public void TallyVotes(List<ScoreCard> scoreCards)
-        //{
-
-        //    foreach (var scoreCard in scoreCards)
-        //    {
-        //        scoreCard.Player.ScorePoint(scoreCard.Score);
-        //    }
-        //}
-
-        //public Player GetPlayerByName(string name)
-        //{
-        //    return Players.Find(player => player.Name == name);
-        //}
-
-        //public Card GetCard(int id)
-        //{
-        //    return Deck.FindCard(id);
-        //}
-
-        ////entity wrappers
-
-        //public Round NewRound()
-        //{
-        //    if (GameState != State.Lobby && GameState != State.Voting)
-        //        throw new InvalidOperationException($"Invalid game state {GameState.DisplayName} for NewRound command");
-
-        //    var round = new Round(++RoundNumber, NextStoryTeller);
-        //    Rounds.Add(round);
-        //    GameState = State.Story;
-
-        //    foreach(var player in ActivePlayers)
-        //    {
-        //        Deck.Draw(player);
-        //    }
-
-        //    return round;
-        //}
-
-
-        //public void DealDeck()
-        //{
-        //    foreach (var player in ActivePlayers)
-        //    {
-        //        for (var i = 0; i < 5; i++)
-        //        {
-        //            DrawCard(player);
-        //        }
-        //    }
-        //}
-
-        //public Card DrawCard(Player player)
-        //{
-        //    return Deck.Draw(player);
-        //}
-
-        //public void ShuffleDeck()
-        //{
-        //    Deck.Shuffle();
-        //}
-
         ////player actions
-
         //public void PlayerTellStory(Player player, string story, Card card)
         //{
         //    if (GameState != State.Story)

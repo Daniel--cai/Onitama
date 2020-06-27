@@ -5,28 +5,23 @@ namespace Onitama.Domain.ValueObjects
 {
     public class Card
     {
-        public int Id { get; private set; }
+        public int Name { get; private set; }
 
-        public Card(int id)
+        public Card(int name)
         {
-            Id = id;
+            Name = name;
         }
 
-        public static implicit operator string(Card card)
+        public static implicit operator int(Card card)
         {
-            return card.Id.ToString();
+            return card.Name;
         }
 
-        public static explicit operator Card(string id)
+        public static explicit operator Card(int result)
         {
-            if (!int.TryParse(id, out var result))
-            {
-                throw new CardInvalidIdException($"Cannot infer card from id {id}");
-            }
-
             if (result < 0 || result > 15)
             {
-                throw new CardInvalidIdException($"Id {id} is not a valid card");
+                throw new CardInvalidIdException($"Id {result} is not a valid card");
             }
 
             return new Card(result);

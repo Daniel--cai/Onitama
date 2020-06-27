@@ -73,11 +73,13 @@ namespace Onitama.Domain.Tests
 
         }
         [Theory]
-        [InlineData("----b----r---rRr--------r")]
         [InlineData("")]
+        [InlineData("abcdefg$!@#$")]
+        [InlineData("bbbbbbbbR---rRr--B-x-r--r")]
+        [InlineData("----b----r---rRr--------r")]
         [InlineData("----b----R---rRr--B-----r")]
-        [InlineData("bbbbbbbbR---rRr--B---r--r")]
         public void ShouldThrowBoardInvalidConfigurationExceptionForInvalidConfiguration(string configuration)
             => Assert.Throws<BoardInvalidConfigurationInException>(() => (Board)configuration);
+
     }
 }
