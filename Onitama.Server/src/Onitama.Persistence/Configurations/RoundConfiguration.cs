@@ -11,6 +11,7 @@ namespace Onitama.Persistence.Configurations
         public void Configure(EntityTypeBuilder<Round> builder)
         {
             builder.Property(e => e.RoundId).HasColumnName("RoundId");
+            builder.Property(e => e.DateCreated).HasColumnName("DateCreated");
             builder.Property(e => e.Previous)
                 .HasColumnName("Previous")
                 .HasConversion(
