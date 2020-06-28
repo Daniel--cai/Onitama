@@ -1,3 +1,6 @@
+/** @jsx jsx */
+import { jsx, Flex } from "theme-ui";
+import * as styles from "./CardList.styles";
 import React, { useCallback } from "react";
 import { Cards } from "../../constants/Card";
 import { useDispatch, useSelector } from "react-redux";
@@ -7,7 +10,6 @@ import { Card } from "./Card";
 import { State } from "../../store";
 import { Dispatch } from "redux";
 import { CardActionTypes } from "../../store/card/types";
-import "./CardList.scss";
 
 export const CardList: React.FC<{
   cards: number[];
@@ -24,7 +26,7 @@ export const CardList: React.FC<{
   const currentCard = useSelector<State, State["card"]>((store) => store.card);
 
   return (
-    <div className="card-list">
+    <Flex sx={styles.cardListCss}>
       {props.cards.map((card) => {
         return (
           <Card
@@ -47,7 +49,7 @@ export const CardList: React.FC<{
           player={false}
         />
       )}
-    </div>
+    </Flex>
   );
 };
 

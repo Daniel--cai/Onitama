@@ -1,5 +1,8 @@
+/** @jsx jsx */
+import { jsx } from "theme-ui";
+import * as styles from "./Board.styles";
+
 import React, { useState, useEffect } from "react";
-import "./Board.scss";
 import { Piece, Colour } from "../../store/pieces/models";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -57,7 +60,7 @@ export const Board: React.FC<{ pieces: Piece[] }> = (props) => {
         pieces.collection.find((piece) => {
           const [x, y] = getPosition(i);
           return piece.x === x && piece.y === y;
-        })!.colour === Colour.White;
+        })!.colour === Colour.Red;
       const isOccupied = occupied.includes(i);
       return isInOffset && (isOppositeOccupied || !isOccupied) ? 1 : 0;
     });
@@ -70,7 +73,7 @@ export const Board: React.FC<{ pieces: Piece[] }> = (props) => {
     }
   }, [dragging, pieces.current]);
   return (
-    <div className="board">
+    <div sx={styles.boardCss}>
       {[...Array(25)].map((_, index) => {
         return (
           <Square

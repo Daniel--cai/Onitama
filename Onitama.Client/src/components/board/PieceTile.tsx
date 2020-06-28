@@ -1,6 +1,8 @@
+/** @jsx jsx */
+import { jsx } from "theme-ui";
+import * as styles from "./Board.styles";
+
 import React, { useEffect } from "react";
-import "./Board.scss";
-import classnames from "classnames";
 import { useDrag } from "react-dnd";
 import { PieceType, Colour } from "../../store/pieces/models";
 import { useSelector } from "react-redux";
@@ -11,29 +13,23 @@ export const PieceTile: React.FC<{
   colour: Colour;
   id: number;
   onDrag: any;
-}> = props => {
-  const type =
-    props.type === PieceType.Master ? "piece--master" : "piece--pupil";
-  const colour = props.colour === Colour.Black ? "piece--blue" : "piece--red";
+}> = (props) => {
+  const type = props.type === PieceType.Master;
+  const colour = props.colour === Colour.Blue;
 
-  const card = useSelector<State, State["card"]>(store => store.card);
+  const card = useSelector<State, State["card"]>((store) => store.card);
 
   const [{ isDragging }, drag] = useDrag({
     item: { type: props.id.toString() },
     canDrag: card.selected !== -1,
-    collect: monitor => ({
-      isDragging: !!monitor.isDragging()
-    })
+    collect: (monitor) => ({
+      isDragging: !!monitor.isDragging(),
+    }),
   });
   useEffect(() => {
     props.onDrag(isDragging, props.id);
   }, [isDragging]);
   return (
-    <div
-      className={classnames("piece", type, colour, {
-        "piece--is-dragging": isDragging
-      })}
-      ref={drag}
-    ></div>
+    <div sx={styles.pieceCss(props.colour, type, isDragging)} ref={drag}></div>
   );
 };

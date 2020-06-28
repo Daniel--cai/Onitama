@@ -13,27 +13,35 @@ interface ButtonCssProps {
 }
 
 export const buttonCss = (props: ButtonCssProps): SxStyleProp => {
-  let css: SxStyleProp= {
+  let css: SxStyleProp = {
     border: "1px solid",
-    borderColor: "primary",
-    backgroundColor: "primary",
+    borderColor: "indigo-300",
+    backgroundColor: "indigo-300",
     outline: "none",
     cursor: "pointer",
     pt: "sm",
     pb: "sm",
     pl: "lg",
     pr: "lg",
-    fontSize: "1rem",
+    variant: "text.button1",
     textAlign: "center",
     color: "white",
 
     borderRadius: "soft",
+    borderWidth: "0.125rem",
+    
   };
 
   css[":hover"] = {
-    backgroundColor: "primary-light",
+    backgroundColor: "indigo-200",
     color: "white",
-    borderColor: "primary-light",
+    borderColor: "indigo-200",
+  };
+
+  css[":active"] = {
+    backgroundColor: "indigo-100",
+    color: "white",
+    borderColor: "indigo-100",
   };
 
   if (props.fullWidth) {
@@ -42,20 +50,21 @@ export const buttonCss = (props: ButtonCssProps): SxStyleProp => {
   }
   if (props.secondary) {
     css.backgroundColor = "white";
-    css.color = "black";
-    css.borderColor = "gray-200";
+    css.color = "indigo-300";
+    css.borderColor = "indigo-300";
 
-    css["& :hover"] = {
-      backgroundColor: "gray-200",
-      borderColor: "gray-300",
+    css[":active"] = {
+      backgroundColor: "indigo-100",
+      borderColor: "indigo-100",
     };
   }
   if (props.disabled) {
-    console.log("dislabed");
     css.cursor = "stop";
     css.backgroundColor = "blue-light-2";
     css.color = "blue-light-2";
   }
-
+  if (props.buttonSize === "small") {
+    css.variant = "text.button2";
+  }
   return css;
 };

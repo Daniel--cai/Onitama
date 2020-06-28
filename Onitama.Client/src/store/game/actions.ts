@@ -14,5 +14,5 @@ export function playTurn(
 }
 
 export function isPlayerTurn(state: GameState) {
-  return state.turn % 2 === Colour.Black;
+  return state.turn % 2 === Colour.Blue;
 }

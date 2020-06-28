@@ -1,68 +1,49 @@
-
-//realign font size baseline with typographical design system
-const rowHeight: number = 4;
-const baseFontSize: number = 16;
-const descenderScale: number = 0.15;
-const baseOffset: number = descenderScale * baseFontSize;
-
-const baseline = (scale: number, rowSpan: number) => {
-    const bodyFontSize: number = scale * baseFontSize;
-    const bodyLineHeight: number = rowSpan * rowHeight;
-    const bodyLineHeightOffset: number = (bodyLineHeight - bodyFontSize) / 2;
-    const offsetTransform: number = baseOffset * bodyScale + bodyLineHeightOffset;
-    return offsetTransform;
-}
-
-//scales (em), height (row spans)
-const bodyScale = 1;
-const bodyHeight = 6;
-
-const headingScale = 1.75;
-const headingHeight = 5;
-
-const subHeadingScale = 0.75;
-const subHeadingHeight = 1;
-
-const labelScale = 1.25;
-const labelHeight = 1.25;
-
 export const typography = {
-    fontSizes: [
-        "0.5rem",
-        "0.75rem",
-        `${bodyScale}rem`,
-        "1.25rem",
-        "1.5rem",
-        "2rem",
-        "3rem",
-        "4rem"
-    ],
-    lineHeights: {
-        body: `${bodyHeight * rowHeight / 16}rem`,
-        heading: `${headingHeight}rem`,
-        subHeading: `${subHeadingHeight}rem`,
-        label: `${labelHeight}`
+  text: {
+    heading1: {
+      fontSize: "34px",
+      lineHeight: "41px",
     },
-    text: {
-        heading: {
-            // transform: baseline(headingScale, headingHeight),
-            lineHeight: `${headingHeight}rem`,
-            fontSize: `${headingScale}rem`
-        },
-        body: {
-            // transform: `translateY(${baseline(bodyScale, bodyHeight)}px)`,
-            lineHeight: `${bodyHeight * rowHeight / 16}rem`,
-            fontSize: `${bodyScale}rem`
-        },
-        subheading: {
-            // transform: baseline(subHeadingScale, subHeadingHeight),
-            lineHeight: `${subHeadingHeight}rem`,
-            fontSize: `${subHeadingScale}rem`
-        },
-        label: {
-            // transform: baseline(labelScale, labelHeight),
-            lineHeight: `${labelHeight}`,
-            fontSize: `${labelScale}rem`
-        }
-    }
-}
+    heading2: {
+      fontSize: "22px",
+      lineHeight: "28px",
+    },
+    heading3: {
+      fontSize: "17px",
+      lineHeight: "22px",
+    },
+    heading4: {
+      fontSize: "15px",
+      lineHeight: "20px",
+    },
+    button1: {
+      fontSize: "17px",
+      lineHeight: "22px",
+    },
+    button2: {
+      fontSize: "12px",
+      lineHeight: "16px",
+    },
+
+    caption1: {
+      fontSize: "12px",
+      lineHeight: "16px",
+    },
+    caption2: {
+      fontSize: "11px",
+      lineHeight: "13px",
+    },
+    body1: {
+      fontSize: "15px",
+      lineHeight: "20px",
+    },
+    body2: {
+      fontSize: "13px",
+      lineHeight: "18px",
+    },
+    smalltext: {
+      fontSize: "11px",
+      lineHeight: "13px",
+    },
+  },
+};

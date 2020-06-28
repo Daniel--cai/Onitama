@@ -7,7 +7,7 @@ export const initialState: PlayerState = {
   name: "",
   code: "",
   connected: false,
-  colour: Colour.Neutral,
+  colour: Colour.Blue,
 };
 
 export function playerReducer(
@@ -27,7 +27,7 @@ export function playerReducer(
     case GAME_FETCHED:
       console.log("fetchGame");
       console.log(action.payload.hand);
-      return { ...state, colour: Colour.Neutral };
+      return { ...state, colour: Colour.Blue };
     default:
       return state;
   }

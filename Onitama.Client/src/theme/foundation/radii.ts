@@ -1,9 +1,9 @@
 const primary = {
   none: "0",
-  soft: "0.2rem",
-  medium: "0.3rem",
+  soft: "6px",
+  medium: "6px",
   hard: "2rem",
-  circle: "100%"
+  circle: "100%",
 };
 
 export const radii = { ...primary };

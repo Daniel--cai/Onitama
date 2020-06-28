@@ -4,7 +4,7 @@ import React from "react";
 
 import * as styles from "./Button.styles";
 
-export type ButtonSize = "large";
+export type ButtonSize = "small" | "large";
 export type ButtonType = "primary" | "secondary" | "ghost";
 
 export interface ButtonProps
@@ -16,33 +16,48 @@ export interface ButtonProps
   fullWidth?: boolean;
   primary?: boolean;
   secondary?: boolean;
+  buttonSize?: ButtonSize;
   onClick?: (e: React.SyntheticEvent) => any;
 }
 
-export const Button: React.FunctionComponent<ButtonProps> = React.forwardRef(({
-  id,
-  children,
-  className,
-  onClick,
-  primary,
-  fullWidth,
-  type,
-  disabled,
-  sx,
-  secondary,
-  ...rest
-}, ref: React.Ref<HTMLButtonElement>) => {
-  return (
-    <button
-      ref={ref}
-      disabled={disabled}
-      sx={{ ...sx!, ...styles.buttonCss({ buttonType: "primary", buttonSize: "large", secondary, disabled }) }}
-      className={className}
-      onClick={onClick}
-      type="button"
-      {...rest}
-    >
-      {children}
-    </button>
-  );
-});
+export const Button: React.FunctionComponent<ButtonProps> = React.forwardRef(
+  (
+    {
+      id,
+      children,
+      className,
+      onClick,
+      primary,
+      fullWidth,
+      type,
+      disabled,
+      sx,
+      secondary,
+      buttonSize = "large",
+      ...rest
+    },
+    ref: React.Ref<HTMLButtonElement>
+  ) => {
+    return (
+      <button
+        ref={ref}
+        disabled={disabled}
+        sx={{
+          ...sx!,
+          ...styles.buttonCss({
+            buttonType: "primary",
+            buttonSize,
+            secondary,
+            disabled,
+          }),
+        }}
+        className={className}
+        onClick={onClick}
+        type="button"
+        {...rest}
+      >
+        {children}
+      </button>
+    );
+  }
+);

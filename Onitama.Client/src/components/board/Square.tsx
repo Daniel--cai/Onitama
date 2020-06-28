@@ -1,6 +1,7 @@
+/** @jsx jsx */
+import { jsx } from "theme-ui";
+import * as styles from "./Board.styles";
 import React from "react";
-import "./Board.scss";
-import classnames from "classnames";
 import { useDrop, DropTargetMonitor } from "react-dnd";
 import { useDispatch, useSelector } from "react-redux";
 import { getPosition } from "../../utils/coordinates";
@@ -38,11 +39,7 @@ export const Square: React.FC<{
   return (
     <div
       ref={drop}
-      className={classnames(
-        "tile",
-        { "tile--isOver": isOver },
-        { "tile--isValid": props.colour === "green" }
-      )}
+      sx={styles.tileCss(props.colour === "green", isOver)}
     >
       {props.children}
     </div>

@@ -4,9 +4,8 @@ export enum PieceType {
 }
 
 export enum Colour {
-  Neutral,
-  White,
-  Black,
+  Blue,
+  Red,
 }
 
 export interface Tile {

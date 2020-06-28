@@ -53,7 +53,6 @@ export const Lobby: React.FC<RouteComponentProps<{ code: string }>> = (
         <div sx={styles.codeCss}>
           <div>{player.code}</div>
         </div>
-        {/* className="lobby-screen__player-list " */}
         <div sx={styles.segmentCss}>
           {game.players.map((player, index) => (
             <div key={index} sx={styles.segmentLineCss}>

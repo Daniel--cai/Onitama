@@ -20,7 +20,7 @@ export function piecesReducer(
         if (
           piece.x === action.payload.x &&
           piece.y === action.payload.y &&
-          piece.colour === Colour.White
+          piece.colour === Colour.Red
         ) {
           return { ...piece, x: -1, y: -1, active: false };
         }

@@ -5,11 +5,13 @@ import { Route } from "react-router";
 import { DndProvider } from "react-dnd";
 import HTML5Backend from "react-dnd-html5-backend";
 import { ThemeProvider } from "theme-ui";
+import { GlobalStyles } from "../theme/global-styles";
 import theme from "../theme";
 
 const App: React.FC<any> = ({ history }) => {
   return (
     <ThemeProvider theme={theme}>
+      <GlobalStyles />
       <ConnectedRouter history={history}>
         <DndProvider backend={HTML5Backend}>
           {/* <BreakpointProvider> */}
