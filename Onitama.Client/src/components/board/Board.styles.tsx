@@ -3,10 +3,10 @@ import { Colour } from "../../store/pieces/models";
 
 export const boardCss: SxStyleProp = {
   display: "grid",
-  gridTemplateColumns: "repeat(5, 100px)",
-  gridTemplateRows: "repeat(5, 100px)",
-  width: "500px",
-  height: "500px",
+  gridTemplateColumns: "repeat(5, 4rem)",
+  gridTemplateRows: "repeat(5, 4rem)",
+  width: "20rem",
+  height: "20rem",
   margin: "auto",
   border: "2px solid #ccc",
 };
@@ -41,7 +41,6 @@ export const pieceCss = (
       height: "0",
       border: "15px solid",
       borderColor: "red-300",
-      borderRadius: "100%",
       color: "white",
       borderWidth: "15px",
     };

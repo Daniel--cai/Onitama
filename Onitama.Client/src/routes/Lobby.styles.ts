@@ -100,3 +100,27 @@ export const landingScreen: {
     },
   },
 };
+
+export const moveCss: SxStyleProp = {
+  boxShadow: "shadow-300",
+  backgroundColor: "white",
+  borderRadius: "soft",
+  justifyContent: "center",
+  alignItems: "center",
+  height: "6rem",
+  cursor: "pointer",
+  ":hover": {
+    boxShadow: "shadow-400",
+  },
+  mt: "sm",
+};
+
+export const red: SxStyleProp = {
+  mx: "md",
+  color: "red-300",
+};
+
+export const blue: SxStyleProp = {
+  mx: "md",
+  color: "blue-300",
+};

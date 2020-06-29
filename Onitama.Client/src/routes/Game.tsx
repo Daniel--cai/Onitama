@@ -7,6 +7,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { CardList } from "../components/card-list";
 import { Cards } from "../constants/Card";
 import { initialise } from "../store/card/actions";
+import { Flex } from "theme-ui";
 
 export const initialiseCards = () => {
   const shuffled = Array.from(Array(Cards.length - 1).keys()).sort(
@@ -15,9 +16,7 @@ export const initialiseCards = () => {
   return shuffled.slice(0, 5);
 };
 
-export const Game: React.FC<RouteComponentProps<{ code: string }>> = (
-  props
-) => {
+export const Game: React.FC = (props) => {
   const pieces = useSelector((store: State) => store.pieces);
   const card = useSelector((store: State) => store.card);
   const dispatch = useDispatch();
@@ -26,10 +25,20 @@ export const Game: React.FC<RouteComponentProps<{ code: string }>> = (
     dispatch(initialise([0, 1, 2, 3, 4]));
   }, []);
   return (
-    <>
+    <Flex
+      sx={{
+        flexDirection: "column",
+        backgroundColor: "white",
+        borderRadius: "medium",
+        m: "xl",
+        boxShadow: "shadow-300",
+        margin: "auto",
+
+      }}
+    >
       <CardList cards={card.red} player={false} />
       <Board pieces={pieces.collection} />
       <CardList cards={card.blue} neutral={card.neutral} player={true} />
-    </>
+    </Flex>
   );
 };

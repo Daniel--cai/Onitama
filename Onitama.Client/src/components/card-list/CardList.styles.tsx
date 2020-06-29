@@ -1,4 +1,5 @@
 import { SxStyleProp } from "theme-ui";
+import { CardSize } from "./Card";
 
 export const cardListCss: SxStyleProp = {
   flexWrap: "wrap",
@@ -8,40 +9,42 @@ export const cardListCss: SxStyleProp = {
 export const cardCss = (
   player: boolean,
   active: boolean,
-  disabled: boolean
+  disabled: boolean,
+  size: CardSize
 ): SxStyleProp => {
   {
     const css: SxStyleProp = {
       display: "grid",
       gridTemplateColumns: "repeat(5, auto)",
       gridTemplateRows: "repeat(5, auto)",
-      width: "150px",
-      height: "150px",
-      boxShadow: "shadow-100",
+      width: "8rem",
+      height: "8rem",
+      boxShadow: "shadow-200",
       background: "#fff",
       margin: "1rem",
       border: "solid 2px",
       borderColor: "white",
     };
+    if (size == "small") {
+      css.width = "4rem";
+      css.height = "4rem";
+    }
     if (player) {
       css[":hover"] = {
-        boxShadow: "shadow-200",
+        boxShadow: "shadow-100",
         cursor: "pointer",
       };
     }
 
     if (active) {
-      css.boxShadow = "shadow-300";
+      css.boxShadow = "shadow-100";
       css[":hover"] = {
-        boxShadow: "shadow-300",
+        boxShadow: "shadow-100",
       };
-      css.borderColor = "gray-600";
+      css.borderColor = "gray-500";
     }
     if (disabled) {
-      css.opacity = 0.25;
-      css[":hover"] = {
-        opacity: 0.25,
-      };
+      css.opacity = 0.5;
     }
     return css;
   }

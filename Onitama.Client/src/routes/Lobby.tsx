@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, SxStyleProp } from "theme-ui";
+import { jsx, SxStyleProp, Flex } from "theme-ui";
 import React, { useState, useCallback } from "react";
 // import logo from "../assets/images/logo.svg";
 import { useDispatch, useSelector } from "react-redux";
@@ -13,7 +13,12 @@ import { Button } from "../components/button";
 
 import * as styles from "./Lobby.styles";
 import { Input } from "../components/input/Input";
-
+import { Modal } from "../components/modal";
+import { Sidebar } from "../components/sidebar/Sidebar";
+import { Board } from "../components/board";
+import { Game } from "./Game";
+import { Card } from "../components/card-list/Card";
+import { Cards } from "../constants/Card";
 export const Lobby: React.FC<RouteComponentProps<{ code: string }>> = (
   props
 ) => {
@@ -47,66 +52,113 @@ export const Lobby: React.FC<RouteComponentProps<{ code: string }>> = (
     //dispatch(removePlayer())
     console.log("sdf");
   }, []);
-  if (code != null && player.connected) {
-    return (
-      <div sx={styles.lobbyScreenCss}>
-        <div sx={styles.codeCss}>
-          <div>{player.code}</div>
-        </div>
-        <div sx={styles.segmentCss}>
-          {game.players.map((player, index) => (
-            <div key={index} sx={styles.segmentLineCss}>
-              <div sx={styles.textCss}>
-                <i className="fas fa-circle" sx={styles.indicatorCss} />{" "}
-                {player.name}
-              </div>
-              <div sx={styles.closeCss}>
-                <i className="fas fa-times" onClick={disconnectPlayer} />
-              </div>
-            </div>
-          ))}
-        </div>
-        <div className="">
-          <Button primary onClick={startGame}>
-            everyone's in
-          </Button>
-        </div>
-
-        {/* <div className="lobby-screen__help">
-          <button className="button__round" onClick={startGame}>
-            <i className="fas fa-camera" />
-          </button>
-          <button className="button__round" onClick={startGame}>
-            ?
-          </button>
-        </div> */}
-      </div>
-    );
-  }
-
   return (
-    <div sx={styles.landingScreen.container}>
-      {/* <img sx={styles.landingScreen.logo} src={Logo} /> */}
-      <CSSTransition in={!inProp} timeout={0} classNames="t" unmountOnExit>
-        <div sx={styles.landingScreen.actions}>
-          <Button onClick={() => setInProp(true)}> play </Button>
-          <Button onClick={() => setInProp(false)}> how to play </Button>
+    <Flex sx={{ flexDirection: "column", height: "100%" }}>
+      <div
+        sx={{
+          variant: "text.heading2",
+          p: "md",
+          color: "white",
+          backgroundColor: "indigo-300",
+        }}
+      >
+        Onitama
+      </div>
+      <Flex sx={{ flex: 1 }}>
+        <Sidebar />
+        <Flex
+          sx={{
+            flex: 1,
+            flexDirection: "column",
+            backgroundColor: "gray-300",
+          }}
+        >
+          {/* <Flex
+            sx={{
+              backgroundColor: "white",
+              borderRadius: "soft",
+              m: "xl",
+              p: "xl",
+            }}
+          >
+            <div
+              sx={{
+                borderRadius: "circle",
+                backgroundColor: "gray-300",
+                p: "md",
+              }}
+            >
+              DC
+            </div>
+            <div>Example Candidiate New</div>
+          </Flex> */}
+          <Game />
+        </Flex>
+        <div
+          sx={{
+            display: "flex",
+            width: "18rem",
+            alignItems: "center",
+            flexDirection: "column",
+          }}
+        >
+          <Flex sx={styles.moveCss}>
+            <Card
+              card={Cards[2]}
+              onClick={() => {}}
+              active={false}
+              disabled={false}
+              player={false}
+              size="small"
+            />
+            <div sx={styles.blue}>a2 - a4</div>
+            <div sx={styles.red}>b1 - b3</div>
+          </Flex>
+          <Flex sx={styles.moveCss}>
+            <Card
+              card={Cards[2]}
+              onClick={() => {}}
+              active={false}
+              disabled={false}
+              player={false}
+              size="small"
+            />
+            <div sx={styles.blue}>a2 - a4</div>
+            <div sx={styles.red}>b1 - b3</div>
+          </Flex>
         </div>
-      </CSSTransition>
-      <CSSTransition in={inProp} timeout={0} classNames="" unmountOnExit>
-        <React.Fragment>
-          <div sx={styles.landingScreen.input}>
-            <label className="label">code</label>
-            <Input value={code} />
-            <label className="label">name</label>
-            <Input value={name} onChange={(e) => setName(e.target.value)} />
-            <Button secondary onClick={joinGame} disabled={code === ""}>
-              Join
-            </Button>
-            {!code && <Button onClick={createAndConnect}>Create</Button>}
-          </div>
-        </React.Fragment>
-      </CSSTransition>
-    </div>
+      </Flex>
+    </Flex>
   );
 };
+
+{
+  /* <CSSTransition in={!inProp} timeout={0} classNames="t" unmountOnExit>
+<div sx={styles.landingScreen.actions}>
+  <Button onClick={() => setInProp(true)}> play </Button>
+  <Button onClick={() => setInProp(false)}> how to play </Button>
+</div>
+</CSSTransition>
+<CSSTransition in={inProp} timeout={0} classNames="" unmountOnExit>
+<React.Fragment>
+  <div sx={styles.landingScreen.input}>
+    <label className="label">code</label>
+    <Input value={code} />
+    <label className="label">name</label>
+    <Input value={name} onChange={(e) => setName(e.target.value)} />
+    <Button secondary onClick={joinGame} disabled={code === ""}>
+      Join
+    </Button>
+    {!code && <Button onClick={createAndConnect}>Create</Button>}
+  </div>
+</React.Fragment>
+</CSSTransition> */
+}
+
+{
+  /* <i className="fas fa-circle" sx={styles.indicatorCss} />{" "}
+{player.name}
+</div>
+<div sx={styles.closeCss}>
+<i className="fas fa-times" onClick={disconnectPlayer} /> */
+}

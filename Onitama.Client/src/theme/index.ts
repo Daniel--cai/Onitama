@@ -37,6 +37,9 @@ export default {
   shadows,
   rowHeight: 9,
   ...typography,
+  gradient: {
+    background: "linear-gradient(#8461C9, #BD7AE3)",
+  },
 };
 
 console.log(typography);

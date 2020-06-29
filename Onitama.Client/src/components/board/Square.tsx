@@ -6,7 +6,7 @@ import { useDrop, DropTargetMonitor } from "react-dnd";
 import { useDispatch, useSelector } from "react-redux";
 import { getPosition } from "../../utils/coordinates";
 import { movePiece } from "../../store/pieces/actions";
-import { playCard } from "../../store/card/actions";
+import { playCard, selectCard } from "../../store/card/actions";
 import { playTurn } from "../../store/game/actions";
 import { State } from "../../store";
 
@@ -24,7 +24,6 @@ export const Square: React.FC<{
     dispatch(playTurn(parseInt(item.type), x, y, card.selected));
     dispatch(playCard());
     dispatch(movePiece(parseInt(item.type), x, y));
-    
   };
 
   const canDrop = (item: any, monitor: DropTargetMonitor) => props.validDrop;

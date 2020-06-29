@@ -38,9 +38,6 @@ const others = {
   "red-100": "#FBE4E8",
   "red-200": "#FDAFBB",
   "red-300": "#FF647C",
-
-  "gradient-low": "#8461C9",
-  "gradient-high": "#BD7AE3",
 };
 
 const semantics = {
@@ -69,6 +66,6 @@ export const colors = {
   ...others,
   ...primary,
   ...semantics,
-  background: "gray-100",
+  background: gray["gray-200"],
   text: "#1c2022",
 };

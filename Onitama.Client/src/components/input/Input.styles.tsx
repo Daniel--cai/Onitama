@@ -2,8 +2,8 @@ import { SxStyleProp } from "theme-ui";
 
 export const inputCss: SxStyleProp = {
   borderRadius: "soft",
-  border: "0.125rem solid",
-  borderColor: "white",
+  border: "1px solid",
+  borderColor: "transparent",
   variant: "text.heading4",
   outline: "none",
   backgroundColor: "white",
@@ -12,7 +12,7 @@ export const inputCss: SxStyleProp = {
   width: "100%",
   display: "block",
   textAlign: "center",
-  boxShadow: "shadow-100",
+  boxShadow: "shadow-200",
 
   WebkitAppearance: "none",
   ":hover": {
@@ -20,9 +20,11 @@ export const inputCss: SxStyleProp = {
   },
   ":focus": {
     borderColor: "gray-300",
-    //backgroundColor: "blue-light-2"
   },
   "button + button": {
     marginLeft: "1",
+  },
+  "::placeholder": {
+    color: "gray-400",
   },
 };

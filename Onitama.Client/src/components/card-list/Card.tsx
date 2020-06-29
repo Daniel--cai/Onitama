@@ -4,15 +4,26 @@ import * as styles from "./CardList.styles";
 
 import React from "react";
 
+export type CardSize = "small" | "large";
+
 export const Card: React.FC<{
   card: number[];
   active: boolean;
   onClick: any;
   disabled: boolean;
   player: boolean;
+  size?: CardSize;
+  readonly?: boolean;
 }> = (props) => {
   return (
-    <div sx={styles.cardCss(props.player, props.active, props.disabled)}>
+    <div
+      sx={styles.cardCss(
+        props.player,
+        props.active,
+        props.disabled,
+        props.size || "large"
+      )}
+    >
       {props.card.map((colour, index) => (
         <div
           onClick={() => {

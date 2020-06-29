@@ -29,6 +29,12 @@ export const GlobalStyles = () => (
         font-style: normal;
         font-weight: 700;
       }
+      html,
+      body,
+      #root,
+      .app {
+        height: 100%;
+      }
       body {
         font-family: Inter, "Segoe UI", Roboto, "Helvetica Neue", Arial,
           "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
