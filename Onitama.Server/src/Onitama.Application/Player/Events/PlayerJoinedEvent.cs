@@ -1,7 +1,7 @@
 ﻿using MediatR;
 using System;
 
-namespace Onitama.Application.Events
+namespace Onitama.Application.Player.Events
 {
     public class PlayerJoinedEvent : INotification
     {

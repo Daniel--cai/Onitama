@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace Onitama.Application.Events
+namespace Onitama.Application.Player.Events
 {
     public class PlayerDisconnectedEvent : INotification
     {
