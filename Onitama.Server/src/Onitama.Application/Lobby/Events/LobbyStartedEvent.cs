@@ -8,7 +8,7 @@ namespace Onitama.Application.Events
     public class LobbyStartedEvent : INotification
     {
         public string Code { get; set; }
-        public Player StoryTeller { get; set; }
-        public List<Player> Players { get; set; }
+        public Domain.Entities.Player StoryTeller { get; set; }
+        public List<Domain.Entities.Player> Players { get; set; }
     }
 }

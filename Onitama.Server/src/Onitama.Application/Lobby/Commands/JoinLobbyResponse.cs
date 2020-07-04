@@ -9,6 +9,6 @@ namespace Onitama.Application.Responses
     public class JoinLobbyResponse
     {
         public State State { get; set; }
-        public IEnumerable<Player> Players { get; set; }
+        public IEnumerable<Domain.Entities.Player> Players { get; set; }
     }
 }

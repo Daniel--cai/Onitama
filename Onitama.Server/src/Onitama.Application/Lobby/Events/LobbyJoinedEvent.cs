@@ -9,6 +9,6 @@ namespace Onitama.Application.Events
     public class LobbyJoinedEvent : INotification
     {
         public string Code { get; set; }
-        public Player Player { get; set; }
+        public Domain.Entities.Player Player { get; set; }
     }
 }

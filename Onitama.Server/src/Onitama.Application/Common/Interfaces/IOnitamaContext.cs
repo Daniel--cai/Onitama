@@ -8,8 +8,8 @@ namespace Onitama.Application.Common.Interfaces
 {
     public interface IOnitamaDbContext
     {
-        DbSet<Player> Player { get; set; }
-        DbSet<Lobby> Lobby { get; set; }
+        DbSet<Domain.Entities.Player> Player { get; set; }
+        DbSet<Domain.Entities.Lobby> Lobby { get; set; }
         DbSet<Round> Round { get; set; }
 
         Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken());

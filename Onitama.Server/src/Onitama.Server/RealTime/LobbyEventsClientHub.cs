@@ -5,6 +5,7 @@ using MediatR;
 using Microsoft.AspNetCore.SignalR;
 using System;
 using System.Threading.Tasks;
+using Onitama.Application.Player.Events;
 
 namespace Onitama.Server.RealTime
 {

@@ -9,7 +9,7 @@ using System.Linq;
 
 namespace Onitama.Server.RealTime
 {
-    public class LobbyEventsClientDispatcher : INotificationHandler<LobbyJoinedEvent>, INotificationHandler<LobbyStartedEvent>, INotificationHandler<LobbyLeaveEvent>
+    public class LobbyEventsClientDispatcher : INotificationHandler<LobbyJoinedEvent>, INotificationHandler<LobbyStartedEvent>
     {
         private readonly IHubContext<LobbyEventsClientHub, IEventsClient> _hubContext;
 
@@ -31,11 +31,6 @@ namespace Onitama.Server.RealTime
                     Players = notification.Players.Select(player => player.Name).ToList(), 
                     StoryTeller = notification.StoryTeller.Name 
                 });
-        }
-
-        public Task Handle(LobbyLeaveEvent notification, CancellationToken cancellationToken)
-        {
-            return _hubContext.Clients.All.LobbyLeft(new LobbyLeftDTO { Player = notification.Player.Name });
         }
     }
 }

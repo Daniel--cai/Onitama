@@ -1,6 +1,5 @@
 ﻿using Onitama.Application.Commands;
 using Onitama.Application.Events;
-using Onitama.Application.Services;
 using Onitama.Domain.ValueObjects;
 using MediatR;
 using System;
@@ -8,22 +7,25 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using Onitama.Application.Common.Interfaces;
+using System.Linq;
+using Microsoft.EntityFrameworkCore;
 
 namespace Onitama.Application.Handlers
 {
     public class StartLobbyCommandHandler : IRequestHandler<StartLobbyCommand>
     {
         private readonly IMediator _mediator;
-        private readonly ILobbyRepository _lobbyRepository;
+        private readonly IOnitamaDbContext _onitamaDbContext;
 
-        public StartLobbyCommandHandler(IMediator mediator, ILobbyRepository lobbyRepository)
+        public StartLobbyCommandHandler(IMediator mediator, IOnitamaDbContext onitamaDbContext)
         {
-            _lobbyRepository = lobbyRepository;
+            _onitamaDbContext = onitamaDbContext;
             _mediator = mediator;
         }
         public async Task<Unit> Handle(StartLobbyCommand request, CancellationToken cancellationToken)
         {
-            var lobby = await _lobbyRepository.GetLobbyByCode(request.Code);
+            var lobby = await _onitamaDbContext.Lobby.Where(lobby => lobby.Code == request.Code).FirstOrDefaultAsync();
             //lobby.DealDeck();
             //await _mediator.Publish(
             //    new LobbyStartedEvent

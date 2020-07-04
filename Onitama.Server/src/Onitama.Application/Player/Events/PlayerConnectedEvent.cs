@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Onitama.Application.Events
+namespace Onitama.Application.Player.Events
 {
     public class PlayerConnectedEvent : INotification
     {
