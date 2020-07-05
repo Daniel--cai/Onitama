@@ -10,7 +10,7 @@ import { Apiclient } from "../api/api";
 import Logo from "../assets/images/logo.png";
 import { CSSTransition } from "react-transition-group";
 import { Button } from "../components/button";
-
+import CoffeeIcon from "../assets/icons/Coffee.svg";
 import * as styles from "./Lobby.styles";
 import { Input } from "../components/input/Input";
 import { Modal } from "../components/modal";
@@ -54,23 +54,22 @@ export const Lobby: React.FC<RouteComponentProps<{ code: string }>> = (
   }, []);
   return (
     <Flex sx={{ flexDirection: "column", height: "100%" }}>
-      <div
+      <Flex
         sx={{
           variant: "text.heading2",
-          p: "md",
-          color: "white",
-          backgroundColor: "indigo-300",
+          mx: "md",
+          my: "md",
         }}
       >
-        Onitama
-      </div>
+        <img src={CoffeeIcon} sx={{ mr: "xs" }} />
+        <div>Onitama</div>
+      </Flex>
       <Flex sx={{ flex: 1 }}>
         <Sidebar />
         <Flex
           sx={{
             flex: 1,
             flexDirection: "column",
-            backgroundColor: "gray-300",
           }}
         >
           {/* <Flex
@@ -94,39 +93,7 @@ export const Lobby: React.FC<RouteComponentProps<{ code: string }>> = (
           </Flex> */}
           <Game />
         </Flex>
-        <div
-          sx={{
-            display: "flex",
-            width: "18rem",
-            alignItems: "center",
-            flexDirection: "column",
-          }}
-        >
-          <Flex sx={styles.moveCss}>
-            <Card
-              card={Cards[2]}
-              onClick={() => {}}
-              active={false}
-              disabled={false}
-              player={false}
-              size="small"
-            />
-            <div sx={styles.blue}>a2 - a4</div>
-            <div sx={styles.red}>b1 - b3</div>
-          </Flex>
-          <Flex sx={styles.moveCss}>
-            <Card
-              card={Cards[2]}
-              onClick={() => {}}
-              active={false}
-              disabled={false}
-              player={false}
-              size="small"
-            />
-            <div sx={styles.blue}>a2 - a4</div>
-            <div sx={styles.red}>b1 - b3</div>
-          </Flex>
-        </div>
+ 
       </Flex>
     </Flex>
   );

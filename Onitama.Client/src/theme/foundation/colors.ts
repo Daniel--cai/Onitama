@@ -2,7 +2,7 @@ const gray = {
   black: "#333333",
   white: "#ffffff",
   hover: "rgba(0, 0, 0, 0.6)",
-  "gray-100": "#FFFFFF",
+  "gray-100": "#F9F9FF",
   "gray-200": "#F7F5F9",
   "gray-300": "#ECE9F1",
   "gray-400": "#D0C9D6",
@@ -66,6 +66,6 @@ export const colors = {
   ...others,
   ...primary,
   ...semantics,
-  background: gray["gray-200"],
+  background: gray["gray-100"],
   text: "#1c2022",
 };
