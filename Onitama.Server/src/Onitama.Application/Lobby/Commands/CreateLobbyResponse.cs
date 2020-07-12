@@ -6,6 +6,6 @@ namespace Onitama.Application.Responses
 {
     public class CreateLobbyResponse
     {
-        public string Code { get; set; }
+        public int LobbyId { get; set; }
     }
 }

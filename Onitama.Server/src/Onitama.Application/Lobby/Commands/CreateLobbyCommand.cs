@@ -7,11 +7,17 @@ using System.Threading;
 using System.Threading.Tasks;
 using Onitama.Application.Common.Interfaces;
 using Onitama.Application.Lobby.Events;
+using System.Collections.Generic;
+using System.Linq;
+using Onitama.Domain.ValueObjects;
 
 namespace Onitama.Application.Handlers
 {
     public class CreateLobbyCommand : IRequest<CreateLobbyResponse>
     {
+        public List<int> RedCard { get; set; }
+        public List<int> BlueCard { get; set; }
+        public int NeutralCard { get; set; }
 
         public class CreateLobbyCommandHandler : IRequestHandler<CreateLobbyCommand, CreateLobbyResponse>
         {
@@ -27,15 +33,22 @@ namespace Onitama.Application.Handlers
             public async Task<CreateLobbyResponse> Handle(CreateLobbyCommand request, CancellationToken cancellationToken)
             {
                 var lobby = new Domain.Entities.Lobby();
-                //var player = new Domain.Entities.Player(request.Name);
-                //lobby.Players.Add(player);
                 _onitamaDbContext.Lobby.Add(lobby);
+
+                lobby.RedCards = request?.RedCard.Select(card => (Card)card).ToList();
+                lobby.BlueCards = request?.BlueCard.Select(card => (Card)card).ToList();
+                lobby.NeutralCard = (Card)request.NeutralCard;
                 await _onitamaDbContext.SaveChangesAsync();
-                var notification = new LobbyCreatedEvent();
+
+                var notification = new LobbyCreatedEvent
+                {
+                    LobbyId = lobby.LobbyId
+                };
+
                 await _mediator.Publish(notification);
                 return new CreateLobbyResponse
                 {
-                    Code = lobby.Code
+                    LobbyId = lobby.LobbyId
                 };
             }
         }

@@ -11,7 +11,6 @@ namespace Onitama.Domain.Entities
     public class Lobby : AuditableEntity
     {
         public int LobbyId { get; set; }
-        public string Code { get; set; }
         public List<Round> Rounds { get; set; }
         public Board Board { get; set; }
         public IList<Player> Players { get; set; }
@@ -22,7 +21,6 @@ namespace Onitama.Domain.Entities
 
         public Lobby()
         {
-            Code = Guid.NewGuid().ToString().Substring(0, 4);
             Rounds = new List<Round>();
             Players = new List<Player>();
             GameState = State.Lobby;
