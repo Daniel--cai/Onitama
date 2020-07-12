@@ -15,6 +15,9 @@
     <PackageReference Include="Serilog.Sinks.Loggly" Version="5.3.0" />
     <PackageReference Include="Serilog.AspNetCore" Version="3.2.0" />
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="3.1.5" />
+    <PackageReference Include="NSwag.Core" Version="13.6.2" />
+    <PackageReference Include="NSwag.Generation.AspNetCore" Version="13.6.2" />
+    <PackageReference Include="NSwag.AspNetCore" Version="13.6.2" />
   </ItemGroup>
 
   <ItemGroup>
