@@ -12,7 +12,6 @@ namespace Onitama.Persistence.Configurations
         public void Configure(EntityTypeBuilder<Lobby> builder)
         {
             builder.Property(e => e.LobbyId).HasColumnName("LobbyId");
-            builder.Property(e => e.Code).HasColumnName("Code");
             builder.Property(e => e.Board)
                 .HasColumnName("Board")
                 .HasMaxLength(25)

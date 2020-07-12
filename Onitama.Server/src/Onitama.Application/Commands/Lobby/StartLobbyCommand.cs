@@ -9,6 +9,6 @@ namespace Onitama.Application.Commands
 {
     public class StartLobbyCommand : IRequest
     {
-        public string Code { get; set; }
+        public int LobbyId { get; set; }
     }
 }

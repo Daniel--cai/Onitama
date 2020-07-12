@@ -44,10 +44,10 @@ namespace Onitama.Server.Controllers
         }
 
         [HttpPost("createLobby")]
-        public async Task<ActionResult<string>> CreateLobby(CreateLobbyCommand command)
+        public async Task<ActionResult<int>> CreateLobby(CreateLobbyCommand command)
         {
             var lobby = await _mediator.Send(command);
-            return lobby.Code;
+            return lobby.LobbyId;
         }
 
         [HttpPost("joinLobby")]

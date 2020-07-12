@@ -37,7 +37,6 @@ namespace Onitama.Persistence.IntegrationTests
         {
             var expected = new Lobby
             {
-                Code = "abcd",
                 NeutralCard = new Card(0),
                 Board = (Board)"bbBbb--------r------rRrr-"
             };

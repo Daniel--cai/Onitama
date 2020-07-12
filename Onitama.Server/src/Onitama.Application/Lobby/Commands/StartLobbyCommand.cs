@@ -25,7 +25,7 @@ namespace Onitama.Application.Handlers
         }
         public async Task<Unit> Handle(StartLobbyCommand request, CancellationToken cancellationToken)
         {
-            var lobby = await _onitamaDbContext.Lobby.Where(lobby => lobby.Code == request.Code).FirstOrDefaultAsync();
+            var lobby = await _onitamaDbContext.Lobby.Where(lobby => lobby.LobbyId == request.LobbyId).FirstOrDefaultAsync();
             //lobby.DealDeck();
             //await _mediator.Publish(
             //    new LobbyStartedEvent

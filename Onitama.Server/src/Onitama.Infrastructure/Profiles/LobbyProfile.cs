@@ -11,9 +11,8 @@ namespace Onitama.Infrastructure.Profiles
         public LobbyProfile()
         {
             //source -> dest
-            CreateMap<Domain.Entities.Lobby, Data.Model.Lobby>()
+            CreateMap<Domain.Entities.Lobby, Data.Model.Lobby>();
                 //.ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Id))
-                .ForMember(dest => dest.Code, opt => opt.MapFrom(src => src.Code));
                 //.ForMember(dest => dest.RoundNumber, opt => opt.MapFrom(src => src.RoundNumber))
                 //.ForMember(dest => dest.Rounds, opt => opt.MapFrom(src => JsonConvert.SerializeObject(src.Rounds.Select(round =>
                 //    new Data.Model.Round
