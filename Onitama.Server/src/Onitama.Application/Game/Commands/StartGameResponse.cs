@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Onitama.Application.Responses
+namespace Onitama.Application..Game.Commands
 {
-    public class StartLobbyResponse
+    public class StartGameResponse
     {
     }
 }

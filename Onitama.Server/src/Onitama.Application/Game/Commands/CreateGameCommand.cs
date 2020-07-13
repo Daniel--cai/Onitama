@@ -11,15 +11,15 @@ using System.Collections.Generic;
 using System.Linq;
 using Onitama.Domain.ValueObjects;
 
-namespace Onitama.Application.Handlers
+namespace Onitama.Application.Game.Commands
 {
-    public class CreateLobbyCommand : IRequest<CreateLobbyResponse>
+    public class CreateGameCommand : IRequest<CreateGameResponse>
     {
         public List<int> RedCard { get; set; }
         public List<int> BlueCard { get; set; }
         public int NeutralCard { get; set; }
 
-        public class CreateLobbyCommandHandler : IRequestHandler<CreateLobbyCommand, CreateLobbyResponse>
+        public class CreateLobbyCommandHandler : IRequestHandler<CreateGameCommand, CreateGameResponse>
         {
             private readonly IMediator _mediator;
             private readonly IOnitamaDbContext _onitamaDbContext;
@@ -30,7 +30,7 @@ namespace Onitama.Application.Handlers
                 _onitamaDbContext = onitamaDbContext;
             }
 
-            public async Task<CreateLobbyResponse> Handle(CreateLobbyCommand request, CancellationToken cancellationToken)
+            public async Task<CreateGameResponse> Handle(CreateGameCommand request, CancellationToken cancellationToken)
             {
                 var lobby = new Domain.Entities.Lobby();
                 _onitamaDbContext.Lobby.Add(lobby);
@@ -46,7 +46,7 @@ namespace Onitama.Application.Handlers
                 };
 
                 await _mediator.Publish(notification);
-                return new CreateLobbyResponse
+                return new CreateGameResponse
                 {
                     LobbyId = lobby.LobbyId
                 };

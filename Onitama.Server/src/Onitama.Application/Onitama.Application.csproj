@@ -31,6 +31,7 @@
     <Folder Include="Lobby\Queries\" />
     <Folder Include="Common\Exceptions\" />
     <Folder Include="Common\Behaviours\" />
+    <Folder Include="Game\Commands\" />
   </ItemGroup>
 
 </Project>
