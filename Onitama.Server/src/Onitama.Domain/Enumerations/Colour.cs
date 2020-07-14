@@ -1,5 +1,5 @@
 ﻿using System;
-namespace Onitama.Domain.ValueObjects
+namespace Onitama.Domain.Enumerations
 {
     public enum Colour
     {

@@ -1,6 +1,6 @@
 ﻿using System;
 using Onitama.Domain.Common;
-using Onitama.Domain.ValueObjects;
+using Onitama.Domain.Enumerations;
 
 namespace Onitama.Domain.Entities
 {

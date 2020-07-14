@@ -1,7 +1,4 @@
-﻿using Onitama.Application.Commands;
-using Onitama.Application.Events;
-using Onitama.Application.Responses;
-using Onitama.Domain.Entities;
+﻿using Onitama.Domain.Entities;
 using MediatR;
 using System.Threading;
 using System.Threading.Tasks;

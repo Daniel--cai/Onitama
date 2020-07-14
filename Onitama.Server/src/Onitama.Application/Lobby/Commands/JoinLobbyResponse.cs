@@ -1,10 +1,9 @@
-﻿using Onitama.Domain.Entities;
-using Onitama.Domain.ValueObjects;
+﻿using Onitama.Domain.Enumerations;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Onitama.Application.Responses
+namespace Onitama.Application.Lobby.Commands
 {
     public class JoinLobbyResponse
     {

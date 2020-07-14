@@ -1,7 +1,4 @@
-﻿using Onitama.Application.Commands;
-using Onitama.Application.Events;
-using Onitama.Application.Responses;
-using MediatR;
+﻿using MediatR;
 using System;
 using System.Collections.Generic;
 using System.Text;

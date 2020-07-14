@@ -3,7 +3,8 @@ using System;
 using System.Threading.Tasks;
 using System.Threading;
 
-namespace Onitama.Application
+
+namespace Onitama.Application.Lobby.Queries
 {
     public partial class GetLobbyByCodeQuery : IRequest<LobbyDto>
     {

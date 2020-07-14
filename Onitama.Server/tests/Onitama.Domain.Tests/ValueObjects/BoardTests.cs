@@ -3,6 +3,7 @@ using Onitama.Domain.Exceptions;
 using Onitama.Domain.ValueObjects;
 using Xunit;
 using System.Linq;
+using Onitama.Domain.Enumerations;
 
 namespace Onitama.Domain.Tests
 {

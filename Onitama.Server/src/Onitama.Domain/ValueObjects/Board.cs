@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Onitama.Domain.Common;
 using Onitama.Domain.Constants;
+using Onitama.Domain.Enumerations;
 using Onitama.Domain.Exceptions;
 
 namespace Onitama.Domain.ValueObjects

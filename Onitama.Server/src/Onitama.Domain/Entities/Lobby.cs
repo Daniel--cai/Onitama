@@ -1,5 +1,6 @@
 ﻿using Onitama.Domain.Common;
 using Onitama.Domain.Entities;
+using Onitama.Domain.Enumerations;
 using Onitama.Domain.ValueObjects;
 using System;
 using System.Collections.Generic;
@@ -11,9 +12,9 @@ namespace Onitama.Domain.Entities
     public class Lobby : AuditableEntity
     {
         public int LobbyId { get; set; }
-        public List<Round> Rounds { get; set; }
+        public ICollection<Round> Rounds { get; set; }
         public Board Board { get; set; }
-        public IList<Player> Players { get; set; }
+        public ICollection<Player> Players { get; set; }
         public State GameState { get; set; }
         public IList<Card> BlueCards { get; set; }
         public IList<Card> RedCards { get; set; }

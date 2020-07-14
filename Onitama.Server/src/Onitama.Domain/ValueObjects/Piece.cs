@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using Onitama.Domain.Constants;
+using Onitama.Domain.Enumerations;
 using Onitama.Domain.Exceptions;
 
 namespace Onitama.Domain.ValueObjects

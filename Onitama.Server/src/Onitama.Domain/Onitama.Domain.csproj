@@ -7,7 +7,7 @@
   <ItemGroup>
     <Folder Include="Exceptions\" />
     <Folder Include="Common\" />
-    <Folder Include="Enumeration\" />
+    <Folder Include="Enumerations\" />
     <Folder Include="Constants\" />
   </ItemGroup>
   <ItemGroup>

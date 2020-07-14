@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Onitama.Application..Game.Commands
+namespace Onitama.Application.Game.Commands
 {
     public class StartGameResponse
     {

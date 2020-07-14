@@ -1,15 +1,13 @@
-﻿using Onitama.Application.Commands;
-using Onitama.Application.Events;
-using Onitama.Application.Responses;
-using MediatR;
+﻿using MediatR;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Onitama.Application.Common.Interfaces;
+using Onitama.Application.Lobby.Events;
 
-namespace Onitama.Application.Handlers
+namespace Onitama.Application.Lobby.Commands
 {
     public class LeaveLobbyCommandHandler : INotificationHandler<LobbyLeaveEvent>
     {

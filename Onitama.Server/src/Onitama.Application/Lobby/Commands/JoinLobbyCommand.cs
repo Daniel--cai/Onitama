@@ -1,7 +1,4 @@
-﻿using Onitama.Application.Commands;
-using Onitama.Application.Events;
-using Onitama.Application.Responses;
-using MediatR;
+﻿using MediatR;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -10,7 +7,7 @@ using System.Threading.Tasks;
 using Onitama.Application.Common.Interfaces;
 using AutoMapper;
 
-namespace Onitama.Application.Handlers
+namespace Onitama.Application.Lobby.Commands
 {
     public class JoinLobbyCommand : IRequest
     {

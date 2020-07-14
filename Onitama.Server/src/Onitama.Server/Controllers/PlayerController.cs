@@ -1,10 +1,10 @@
-﻿using Onitama.Application.Commands;
-using MediatR;
+﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Onitama.Application.Game.Commands;
 
 namespace Onitama.Server.Controllers
 {
@@ -19,26 +19,11 @@ namespace Onitama.Server.Controllers
             _mediator = mediator;
         }
 
-        [HttpPost("TellStory")]
-        public async Task<ActionResult> TellStory(TellStoryCommand command)
+        [HttpPost("playTurn")]
+        public async Task<ActionResult> PlayTurn(PlayTurnCommand command)
         {
             await _mediator.Send(command);
             return Ok();
         }
-
-        [HttpPost("PlayCard")]
-        public async Task<ActionResult> PlayCard(PlayCardCommand command)
-        {
-            await _mediator.Send(command);
-            return Ok();
-        }
-
-        [HttpPost("VoteCard")]
-        public async Task<ActionResult> VoteCard(VoteCardCommand command)
-        {
-            await _mediator.Send(command);
-            return Ok();
-        }
-
     }
 }

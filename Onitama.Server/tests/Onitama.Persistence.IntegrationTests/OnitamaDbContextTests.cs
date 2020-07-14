@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Linq;
 using Onitama.Domain.ValueObjects;
 using System.Collections.Generic;
+using Onitama.Domain.Enumerations;
 
 namespace Onitama.Persistence.IntegrationTests
 {

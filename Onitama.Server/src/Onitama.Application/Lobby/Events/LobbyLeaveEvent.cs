@@ -6,7 +6,7 @@ using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
 
-namespace Onitama.Application.Events
+namespace Onitama.Application.Lobby.Events
 {
     public class LobbyLeaveEvent : INotification
     {

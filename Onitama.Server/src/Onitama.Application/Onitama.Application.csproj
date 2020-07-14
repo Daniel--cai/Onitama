@@ -16,7 +16,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Commands\Game\" />
     <Folder Include="Common\" />
     <Folder Include="Common\Interfaces\" />
     <Folder Include="Lobby\" />
@@ -32,6 +31,9 @@
     <Folder Include="Common\Exceptions\" />
     <Folder Include="Common\Behaviours\" />
     <Folder Include="Game\Commands\" />
+    <Folder Include="Infrastructure\" />
+    <Folder Include="Interfaces\" />
+    <Folder Include="Interfaces\Infrastructure\" />
   </ItemGroup>
 
 </Project>

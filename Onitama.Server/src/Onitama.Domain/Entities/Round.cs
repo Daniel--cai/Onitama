@@ -10,6 +10,8 @@ namespace Onitama.Domain.Entities
         public Coordinate Next { get; set; }
         public Card Card { get; set; }
         public int LobbyId { get; set; }
+
+        // Navigation Properties
         public Lobby Lobby { get; set; }
     }
 }

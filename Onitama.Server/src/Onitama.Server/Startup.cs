@@ -2,8 +2,6 @@
 using System.Reflection;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
-using Onitama.Application.Commands;
-using Onitama.Application.Events;
 using Onitama.Server.RealTime;
 using MediatR;
 using Microsoft.AspNetCore.Builder;

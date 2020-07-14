@@ -1,13 +1,8 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
-using Onitama.Application.Commands;
-using Onitama.Domain.Entities;
-using Onitama.Server.DTO;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using Onitama.Application;
+using Onitama.Application.Lobby.Commands;
+using Onitama.Application.Game.Commands;
 
 namespace Onitama.Server.Controllers
 {
@@ -23,33 +18,6 @@ namespace Onitama.Server.Controllers
             _mediator = mediator;
         }
 
-        [HttpGet]
-        public async Task<ActionResult<LobbyDTO>> GetByCode([FromQuery] GetLobbyByCodeQuery query)
-        {
-            var lobby = await _mediator.Send(query);
-            //var reconnect = lobby.Players.Find(player => player.Name == query.Player);
-            //var response = new LobbyDTO
-            //{
-            //    Players = lobby.ActivePlayers?.Select(player => new PlayerDTO { Name = player.Name, Score = player.Score }).ToList(),
-            //    RoundNumber = lobby.RoundNumber,
-            //    GameState = lobby.GameState.DisplayName,
-            //    CurrentStoryTeller = lobby.CurrentStoryTeller?.Name,
-            //    StoryCard = lobby.CurrentStoryCard?.Id ?? 0,
-            //    Story = lobby.CurrentStory,
-            //    Cards = lobby.CurrentPlayedCards?.Select(card => card.Id).ToList(),
-            //    Votes = lobby.CurrentVotes?.Select(vote => new VoteDTO { Card = vote.Card.Id, Player = vote.Player.Name }).ToList(),
-            //    Hand = lobby.Deck.Hand(reconnect)?.Select(card => card.Id).ToList()
-            //};
-            return null;
-        }
-
-        [HttpPost("createLobby")]
-        public async Task<ActionResult<int>> CreateLobby(CreateLobbyCommand command)
-        {
-            var lobby = await _mediator.Send(command);
-            return lobby.LobbyId;
-        }
-
         [HttpPost("joinLobby")]
         public async Task<ActionResult> JoinLobby(JoinLobbyCommand command)
         {
@@ -58,7 +26,7 @@ namespace Onitama.Server.Controllers
         }
 
         [HttpPost("startGame")]
-        public async Task<ActionResult> StartGame(StartLobbyCommand command)
+        public async Task<ActionResult> StartGame(StartGameCommand command)
         {
             var lobby = await _mediator.Send(command);
             return Ok();
