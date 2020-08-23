@@ -10,7 +10,6 @@ namespace Onitama.Server.Controllers
     [ApiController]
     public class LobbyController : ControllerBase
     {
-
         private readonly IMediator _mediator;
 
         public LobbyController(IMediator mediator)
