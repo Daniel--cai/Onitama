@@ -3,7 +3,8 @@ using MediatR;
 
 namespace Onitama.Application.Lobby.Events
 {
-    public class RoundFinishedEvent : INotification
+    public class RoundFinishedEvent : ILobbyEvent, INotification
     {
+        public int LobbyId { get; set; }
     }
 }

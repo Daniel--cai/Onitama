@@ -1,11 +1,14 @@
-<Project Sdk="Microsoft.NET.Sdk">
-
+<Project Sdk="Microsoft.NET.Sdk.Web">
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
 
     <IsPackable>false</IsPackable>
   </PropertyGroup>
 
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'Onitama.Api.IntegrationTests' ">
+    <StartAction>Project</StartAction>
+    <ApplicationURL>http://localhost:5000</ApplicationURL>
+  </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.2.0" />
     <PackageReference Include="xunit" Version="2.4.0" />
@@ -15,14 +18,7 @@
     <PackageReference Include="Moq" Version="4.13.0" />
     <PackageReference Include="Shouldly" Version="3.0.2" />
         
-    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.5" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="3.1.2" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\..\src\Onitama.Persistence\Onitama.Persistence.csproj" />
-    <ProjectReference Include="..\..\src\Onitama.Common\Onitama.Common.csproj" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
 </Project>

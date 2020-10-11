@@ -22,7 +22,6 @@ namespace Onitama.Application.Game.Commands
 
         public class PlayTurnCommandHandler : IRequestHandler<PlayTurnCommand>
         {
-
             private readonly IOnitamaDbContext _onitamaDbContext;
             private readonly IMediator _mediator;
             private readonly ITurnLogic _turnLogic;
@@ -46,8 +45,8 @@ namespace Onitama.Application.Game.Commands
                 _onitamaDbContext.Round.Add(round);
 
                 var lobby = await _onitamaDbContext.Lobby.FirstOrDefaultAsync(lobby => lobby.LobbyId == request.LobbyId);
-
                 await _onitamaDbContext.SaveChangesAsync();
+
                 var turnPlayedEvent = new TurnPlayedEvent
                 {
                     Round = round,

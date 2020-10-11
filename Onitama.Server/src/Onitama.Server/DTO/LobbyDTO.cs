@@ -1,9 +1,10 @@
-﻿using Onitama.Domain.ValueObjects;
+﻿using Onitama.Application.Common.Mappings;
+using Onitama.Application.Lobby.Queries;
 using System.Collections.Generic;
 
 namespace Onitama.Server.DTO
 {
-    public class LobbyDTO
+    public class LobbyDTO : IMapFrom<LobbyDto>
     {
         public List<PlayerDTO> Players { get; set; } 
         public int RoundNumber { get; set; }
@@ -14,5 +15,6 @@ namespace Onitama.Server.DTO
         public List<int> Cards { get; set; }
         public List<VoteDTO> Votes { get; set; }
         public List<int> Hand { get; set; }
+
     }
 }

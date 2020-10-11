@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Onitama.Server.DTO
 {
-    public class LobbyStartedDTO : INotificationDTO
+    public class GameStartedDTO : INotificationDTO
     {
         public string StoryTeller { get; set; }
         public List<string> Players { get; set; }
