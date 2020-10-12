@@ -19,7 +19,7 @@ export const cardCss = (
       gridTemplateRows: "repeat(5, auto)",
       width: "8rem",
       height: "8rem",
-      boxShadow: "shadow-200",
+      boxShadow: "elevation-10",
       background: "#fff",
       margin: "1rem",
       border: "solid 2px",
@@ -31,17 +31,17 @@ export const cardCss = (
     }
     if (player) {
       css[":hover"] = {
-        boxShadow: "shadow-100",
+        boxShadow: "elevation-10",
         cursor: "pointer",
       };
     }
 
     if (active) {
-      css.boxShadow = "shadow-100";
+      css.boxShadow = "elevation-10";
       css[":hover"] = {
-        boxShadow: "shadow-100",
+        boxShadow: "elevation-10",
       };
-      css.borderColor = "gray-500";
+      css.borderColor = "charcoal-75";
     }
     if (disabled) {
       css.opacity = 0.5;
@@ -54,15 +54,15 @@ export const squareCss = (move: boolean, base: boolean) => {
   {
     const css: SxStyleProp = {
       border: "1px solid",
-      borderColor: "gray-300",
+      borderColor: "charcoal-25",
     };
     if (move) {
-      css.backgroundColor = "gray-400";
-      css.borderColor = "gray-400";
+      css.backgroundColor = "charcoal-50";
+      css.borderColor = "charcoal-50";
     }
     if (base) {
-      css.backgroundColor = "gray-500";
-      css.borderColor = "gray-500";
+      css.backgroundColor = "charcoal-75";
+      css.borderColor = "charcoal-75";
     }
 
     return css;

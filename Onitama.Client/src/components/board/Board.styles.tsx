@@ -15,7 +15,7 @@ export const tileCss = (valid: boolean, isOver: boolean): SxStyleProp => {
   {
     const css: SxStyleProp = {
       border: "2px solid",
-      borderColor: "gray-400",
+      borderColor: "charcoal-50",
       alignSelf: "center",
       width: "100%",
       height: "100%",
@@ -24,7 +24,7 @@ export const tileCss = (valid: boolean, isOver: boolean): SxStyleProp => {
       alignItems: "center",
     };
     if (valid) {
-      css.backgroundColor = "gray-400";
+      css.backgroundColor = "charcoal-50";
     }
     return css;
   }
@@ -40,12 +40,12 @@ export const pieceCss = (
       width: "0",
       height: "0",
       border: "15px solid",
-      borderColor: "red-300",
+      borderColor: "crimson-100",
       color: "white",
       borderWidth: "15px",
     };
     if (color === Colour.Blue) {
-      css.borderColor = "blue-300";
+      css.borderColor = "ocean-100";
       css[":hover"] = { cursor: "pointer" };
     }
     if (master) {

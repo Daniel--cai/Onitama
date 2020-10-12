@@ -12,19 +12,19 @@ export const inputCss: SxStyleProp = {
   width: "100%",
   display: "block",
   textAlign: "center",
-  boxShadow: "shadow-200",
+  boxShadow: "elevation-25",
 
   WebkitAppearance: "none",
   ":hover": {
-    borderColor: "gray-300",
+    borderColor: "charcoal-25",
   },
   ":focus": {
-    borderColor: "gray-300",
+    borderColor: "charcoal-25",
   },
   "button + button": {
     marginLeft: "1",
   },
   "::placeholder": {
-    color: "gray-400",
+    color: "charcoal-50",
   },
 };

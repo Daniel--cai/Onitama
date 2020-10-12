@@ -31,7 +31,7 @@ export const Game: React.FC = (props) => {
         backgroundColor: "white",
         borderRadius: "medium",
         m: "xl",
-        boxShadow: "shadow-300",
+        boxShadow: "elevation-50",
         margin: "auto",
 
       }}

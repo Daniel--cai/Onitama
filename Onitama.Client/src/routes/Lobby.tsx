@@ -83,7 +83,7 @@ export const Lobby: React.FC<RouteComponentProps<{ code: string }>> = (
             <div
               sx={{
                 borderRadius: "circle",
-                backgroundColor: "gray-300",
+                backgroundColor: "charcoal-25",
                 p: "md",
               }}
             >

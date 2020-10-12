@@ -15,8 +15,8 @@ interface ButtonCssProps {
 export const buttonCss = (props: ButtonCssProps): SxStyleProp => {
   let css: SxStyleProp = {
     border: "1px solid",
-    borderColor: "indigo-300",
-    backgroundColor: "indigo-300",
+    borderColor: "violet-100",
+    backgroundColor: "violet-100",
     outline: "none",
     cursor: "pointer",
     pt: "sm",
@@ -33,15 +33,15 @@ export const buttonCss = (props: ButtonCssProps): SxStyleProp => {
   };
 
   css[":hover"] = {
-    backgroundColor: "indigo-200",
+    backgroundColor: "violet-75",
     color: "white",
-    borderColor: "indigo-200",
+    borderColor: "violet-75",
   };
 
   css[":active"] = {
-    backgroundColor: "indigo-100",
+    backgroundColor: "violet-50",
     color: "white",
-    borderColor: "indigo-100",
+    borderColor: "violet-50",
   };
 
   if (props.fullWidth) {
@@ -50,12 +50,12 @@ export const buttonCss = (props: ButtonCssProps): SxStyleProp => {
   }
   if (props.secondary) {
     css.backgroundColor = "white";
-    css.color = "indigo-300";
-    css.borderColor = "indigo-300";
+    css.color = "violet-100";
+    css.borderColor = "violet-100";
 
     css[":active"] = {
-      backgroundColor: "indigo-100",
-      borderColor: "indigo-100",
+      backgroundColor: "violet-50",
+      borderColor: "violet-50",
     };
   }
   if (props.disabled) {

@@ -2,7 +2,7 @@ import { SxStyleProp } from "theme-ui";
 
 export const lobbyCss: SxStyleProp = {
   fontSize: "3",
-  backgroundColor: "gray-100",
+  backgroundColor: "charcoal-2",
 };
 
 export const lobbyScreenCss: SxStyleProp = {
@@ -16,7 +16,7 @@ export const segmentCss: SxStyleProp = {
   display: "grid",
   gridGap: "0.5em",
   gridTemplateRows: "repeat(8, 1fr)",
-  background: "gray-200",
+  background: "charcoal-10",
   padding: "1rem 0",
 };
 
@@ -56,7 +56,7 @@ export const codeCss: SxStyleProp = {
 
 export const closeCss: SxStyleProp = {
   justifyContent: "flex-end",
-  color: "gray-200",
+  color: "charcoal-10",
   "> i": {
     cursor: "pointer",
   },
@@ -102,7 +102,7 @@ export const landingScreen: {
 };
 
 export const moveCss: SxStyleProp = {
-  boxShadow: "shadow-300",
+  boxShadow: "elevation-50",
   backgroundColor: "white",
   borderRadius: "soft",
   justifyContent: "center",
@@ -110,17 +110,17 @@ export const moveCss: SxStyleProp = {
   height: "6rem",
   cursor: "pointer",
   ":hover": {
-    boxShadow: "shadow-400",
+    boxShadow: "elevation-75",
   },
   mt: "sm",
 };
 
 export const red: SxStyleProp = {
   mx: "md",
-  color: "red-300",
+  color: "crimson-100",
 };
 
 export const blue: SxStyleProp = {
   mx: "md",
-  color: "blue-300",
+  color: "ocean-100",
 };

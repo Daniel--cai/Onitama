@@ -14,13 +14,13 @@ export const Sidebar: React.FC = () => {
       }}
     >
       <Flex sx={styles.sidebarCss(true)}>
-        <img src={SearchIcon} sx={{ mr: "sm", color: "indigo-200" }} /> Play
+        <img src={SearchIcon} sx={{ mr: "sm", color: "violet-75" }} /> Play
       </Flex>
       <Flex sx={styles.sidebarCss(false)}>
-        <img src={SearchIcon} sx={{ mr: "sm", color: "indigo-200" }} /> Learn
+        <img src={SearchIcon} sx={{ mr: "sm", color: "violet-75" }} /> Learn
       </Flex>
       <Flex sx={styles.sidebarCss(false)}>
-        <img src={SearchIcon} sx={{ mr: "sm", color: "indigo-200" }} /> Watch
+        <img src={SearchIcon} sx={{ mr: "sm", color: "violet-75" }} /> Watch
       </Flex>
 
       <div
@@ -29,7 +29,7 @@ export const Sidebar: React.FC = () => {
           width: "18rem",
           alignItems: "center",
           flexDirection: "column",
-          backgroundColor: "gray-300",
+          backgroundColor: "charcoal-25",
         }}
       >
         <Flex sx={styles.moveCss}>

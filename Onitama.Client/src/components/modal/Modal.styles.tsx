@@ -15,14 +15,14 @@ export const modalWrapperCss: SxStyleProp = {
 
 export const modalCss: SxStyleProp = {
   width: "30rem",
-  backgroundColor: "gray-200",
+  backgroundColor: "charcoal-10",
   display: "flex",
   alignSelf: "center",
   flexDirection: "column",
   margin: ["unset", "auto", "auto"],
   position: "relative",
   borderRadius: "medium",
-  boxShadow: "shadow-100",
+  boxShadow: "elevation-10",
   p: "xl",
   textAlign: "center",
 };
