@@ -1,24 +1,39 @@
 export const typography = {
   text: {
     heading1: {
-      fontSize: "34px",
-      lineHeight: "41px",
+      fontSize: "2px",
+      lineHeight: "108px",
+      fontWeight:"500"
     },
     heading2: {
-      fontSize: "22px",
-      lineHeight: "28px",
+      fontSize: "60px",
+      lineHeight: "90px",
+      fontWeight:"500"
     },
     heading3: {
-      fontSize: "17px",
-      lineHeight: "22px",
+      fontSize: "48px",
+      lineHeight: "72px",
+      fontWeight:"500"
     },
     heading4: {
-      fontSize: "15px",
-      lineHeight: "20px",
+      fontSize: "44px",
+      lineHeight: "66px",
+      fontWeight:"500"
+    },
+    heading5: {
+      fontSize: "28px",
+      lineHeight: "42px",
+      fontWeight:"500"
+    },
+    heading6: {
+      fontSize: "20px",
+      lineHeight: "30px",
+      fontWeight:"500"
     },
     button1: {
       fontSize: "17px",
       lineHeight: "22px",
+      fontWeight:"500"
     },
     button2: {
       fontSize: "12px",
@@ -26,24 +41,26 @@ export const typography = {
     },
 
     caption1: {
-      fontSize: "12px",
+      fontSize: "10px",
       lineHeight: "16px",
+      letterSpacing: "1.5",
+      fontWeight:"500"
     },
-    caption2: {
-      fontSize: "11px",
-      lineHeight: "13px",
-    },
+
     body1: {
-      fontSize: "15px",
-      lineHeight: "20px",
+      fontSize: "16px",
+      lineHeight: "24px",
+      fontWeight:"500"
     },
     body2: {
-      fontSize: "13px",
-      lineHeight: "18px",
+      fontSize: "14px",
+      lineHeight: "20px",
+      fontWeight:"500"
     },
-    smalltext: {
-      fontSize: "11px",
-      lineHeight: "13px",
+    body3: {
+      fontSize: "12px",
+      lineHeight: "18px",
+      fontWeight:"500"
     },
   },
 };

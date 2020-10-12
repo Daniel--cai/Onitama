@@ -1,8 +1,8 @@
 const primary = {
   none: "0",
-  soft: "6px",
-  medium: "8px",
-  hard: "2rem",
+  soft: "0",
+  medium: "0",
+  hard: "0",
   circle: "100%",
 };
 

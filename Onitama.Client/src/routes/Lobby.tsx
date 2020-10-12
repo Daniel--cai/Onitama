@@ -56,7 +56,7 @@ export const Lobby: React.FC<RouteComponentProps<{ code: string }>> = (
     <Flex sx={{ flexDirection: "column", height: "100%" }}>
       <Flex
         sx={{
-          variant: "text.heading2",
+          variant: "text.heading5",
           mx: "md",
           my: "md",
         }}

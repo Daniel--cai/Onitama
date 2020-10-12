@@ -23,7 +23,7 @@ export const buttonCss = (props: ButtonCssProps): SxStyleProp => {
     pb: "sm",
     pl: "lg",
     pr: "lg",
-    variant: "text.button1",
+    variant: "text.body1",
     textAlign: "center",
     color: "white",
 
@@ -64,7 +64,7 @@ export const buttonCss = (props: ButtonCssProps): SxStyleProp => {
     css.color = "blue-light-2";
   }
   if (props.buttonSize === "small") {
-    css.variant = "text.button2";
+    css.variant = "text.body2";
   }
   return css;
 };

@@ -15,7 +15,7 @@ export const tileCss = (valid: boolean, isOver: boolean): SxStyleProp => {
   {
     const css: SxStyleProp = {
       border: "2px solid",
-      borderColor: "charcoal-50",
+      borderColor: "charcoal-25",
       alignSelf: "center",
       width: "100%",
       height: "100%",
@@ -24,7 +24,7 @@ export const tileCss = (valid: boolean, isOver: boolean): SxStyleProp => {
       alignItems: "center",
     };
     if (valid) {
-      css.backgroundColor = "charcoal-50";
+      css.backgroundColor = "charcoal-25";
     }
     return css;
   }

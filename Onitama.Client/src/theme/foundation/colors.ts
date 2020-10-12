@@ -12,9 +12,10 @@ const gray = {
 };
 
 const others = {
+  "violet-10": "#624ed8",
   "violet-25": "#D9D3F5",
-  "violet-50": "#DBA5F5",
-  "violet-75": "#B4A6EA",
+  "violet-50": "#B4A6EA",
+  "violet-75": "#8F7BE1",
   "violet-100": "#694ED6",
   "violet-100-dark": "#493694",
 
@@ -66,5 +67,5 @@ export const colors = {
   ...others,
   ...semantics,
   background: gray["charcoal-2"],
-  text: "#1c2022",
+  text: gray["charcoal-100"],
 };

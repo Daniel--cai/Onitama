@@ -2,27 +2,30 @@ import { SxStyleProp } from "theme-ui";
 
 export const sidebarCss = (active: boolean): SxStyleProp => {
   const css: SxStyleProp = {
-    variant: "text.heading4",
-    color: "violet-100",
-    width: "12rem",
-    p: "xs",
+    variant: "text.body1",
+    fontWeight: 600,
+    color: "charcoal-100",
+    width: "18rem",
+    p: "md",
     alignItems: "center",
     borderRadius: "soft",
-    mb: "xs",
+    mb: "sm",
     cursor: "pointer",
     [":hover"]: {
-      backgroundColor: "charcoal-25",
+      backgroundColor: "violet-2",
     },
   };
   if (active) {
-    css.backgroundColor = "charcoal-25";
-    css[":hover"] = { backgrounColor: "charcoal-25" };
+    css.color = "violet-100";
+    css[":hover"] = { 
+      // backgroundColor: transparentize("violet-100"),
+     };
   }
   return css;
 };
 
 export const moveCss: SxStyleProp = {
-  boxShadow: "elevation-50",
+  boxShadow: "elevation-10",
   backgroundColor: "white",
   borderRadius: "soft",
   justifyContent: "center",
@@ -30,7 +33,7 @@ export const moveCss: SxStyleProp = {
   height: "6rem",
   cursor: "pointer",
   ":hover": {
-    boxShadow: "elevation-75",
+    boxShadow: "elevation-25",
   },
   mt: "sm",
 };
