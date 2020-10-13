@@ -101,20 +101,6 @@ export const landingScreen: {
   },
 };
 
-export const moveCss: SxStyleProp = {
-  boxShadow: "elevation-50",
-  backgroundColor: "white",
-  borderRadius: "soft",
-  justifyContent: "center",
-  alignItems: "center",
-  height: "6rem",
-  cursor: "pointer",
-  ":hover": {
-    boxShadow: "elevation-75",
-  },
-  mt: "sm",
-};
-
 export const red: SxStyleProp = {
   mx: "md",
   color: "crimson-100",
@@ -123,4 +109,13 @@ export const red: SxStyleProp = {
 export const blue: SxStyleProp = {
   mx: "md",
   color: "ocean-100",
+};
+
+export const header: SxStyleProp = {
+  variant: "text.heading6",
+  px: "md",
+  py: "md",
+  height: '3.5rem',
+  backgroundColor: "white",
+  boxShadow: "elevation-10"
 };

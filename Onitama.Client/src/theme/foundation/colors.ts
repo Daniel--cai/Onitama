@@ -1,7 +1,6 @@
 const gray = {
   black: "#333333",
   white: "#ffffff",
-
   "charcoal-2": "#FAFAFA",
   "charcoal-10": "#EAEAEA",
   "charcoal-25": "#CECECE",
@@ -12,7 +11,9 @@ const gray = {
 };
 
 const others = {
-  "violet-10": "#624ed8",
+  "violet-2": "#F9F8FD",
+  "violet-5": "#F4F3F8",
+  "violet-10": "#F0EDFB",
   "violet-25": "#D9D3F5",
   "violet-50": "#B4A6EA",
   "violet-75": "#8F7BE1",

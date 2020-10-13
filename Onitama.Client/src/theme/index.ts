@@ -34,12 +34,19 @@ export default {
       bg: "primary",
     },
   },
-  transitions: { default: "all 200ms ease-in-out" },
+  transitions: { default: "color 100ms ease-in-out" },
   shadows,
   rowHeight: 9,
   ...typography,
   gradient: {
     background: "linear-gradient(#8461C9, #BD7AE3)",
+  },
+  cards: {
+    normal: {
+      boxShadow: "elevation-10",
+      borderRadius: "soft",
+      p: "md",
+    },
   },
 };
 

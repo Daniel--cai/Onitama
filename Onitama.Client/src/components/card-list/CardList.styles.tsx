@@ -20,14 +20,14 @@ export const cardCss = (
       width: "8rem",
       height: "8rem",
       boxShadow: "elevation-10",
-      background: "#fff",
-      margin: "1rem",
+      background: "white",
+      margin: "md",
       border: "solid 2px",
       borderColor: "white",
     };
     if (size == "small") {
-      css.width = "4rem";
-      css.height = "4rem";
+      css.width = "2.5rem";
+      css.height = "2.5rem";
     }
     if (player) {
       css[":hover"] = {

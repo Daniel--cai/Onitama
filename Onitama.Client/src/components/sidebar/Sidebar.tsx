@@ -4,7 +4,7 @@ import SearchIcon from "../../assets/icons/Search.svg";
 import * as styles from "./Sidebar.styles";
 import { Card } from "../card-list/Card";
 import { Cards } from "../../constants/Card";
-
+import { Table } from "../../components/table";
 export const Sidebar: React.FC = () => {
   return (
     <Flex
@@ -14,49 +14,15 @@ export const Sidebar: React.FC = () => {
       }}
     >
       <Flex sx={styles.sidebarCss(true)}>
-        <img src={SearchIcon} sx={{ mr: "sm", color: "violet-75" }} /> Play
+        <img src={SearchIcon} sx={{ mr: "sm" }} /> Play
       </Flex>
       <Flex sx={styles.sidebarCss(false)}>
-        <img src={SearchIcon} sx={{ mr: "sm", color: "violet-75" }} /> Learn
+        <img src={SearchIcon} sx={{ mr: "sm" }} /> Learn
       </Flex>
       <Flex sx={styles.sidebarCss(false)}>
-        <img src={SearchIcon} sx={{ mr: "sm", color: "violet-75" }} /> Watch
+        <img src={SearchIcon} sx={{ mr: "sm" }} /> Watch
       </Flex>
-
-      <div
-        sx={{
-          display: "flex",
-          width: "18rem",
-          alignItems: "center",
-          flexDirection: "column",
-          backgroundColor: "charcoal-25",
-        }}
-      >
-        <Flex sx={styles.moveCss}>
-          <Card
-            card={Cards[2]}
-            onClick={() => {}}
-            active={false}
-            disabled={false}
-            player={false}
-            size="small"
-          />
-          <div sx={styles.blue}>a2 - a4</div>
-          <div sx={styles.red}>b1 - b3</div>
-        </Flex>
-        <Flex sx={styles.moveCss}>
-          <Card
-            card={Cards[2]}
-            onClick={() => {}}
-            active={false}
-            disabled={false}
-            player={false}
-            size="small"
-          />
-          <div sx={styles.blue}>a2 - a4</div>
-          <div sx={styles.red}>b1 - b3</div>
-        </Flex>
-      </div>
+      <Table />
     </Flex>
   );
 };
