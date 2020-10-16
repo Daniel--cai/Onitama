@@ -1,6 +1,6 @@
 import { createStore, applyMiddleware, compose, combineReducers } from "redux";
 import { createBrowserHistory, History } from "history";
-import { routerMiddleware, connectRouter } from "connected-react-router";
+import { connectRouter } from "connected-react-router";
 import thunkMiddleware from "redux-thunk";
 import { piecesReducer } from "./pieces/reducers";
 import { cardReducer } from "./card/reducers";

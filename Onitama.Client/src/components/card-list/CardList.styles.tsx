@@ -25,7 +25,7 @@ export const cardCss = (
       border: "solid 2px",
       borderColor: "white",
     };
-    if (size == "small") {
+    if (size === "small") {
       css.width = "2.5rem";
       css.height = "2.5rem";
     }

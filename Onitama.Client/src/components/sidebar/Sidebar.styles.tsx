@@ -8,10 +8,10 @@ export const sidebarCss = (active: boolean): SxStyleProp => {
     alignItems: "center",
     mb: "sm",
     cursor: "pointer",
-    [":hover"]: {
+    ":hover": {
       backgroundColor: "violet-5",
     },
-    [":active"]: {
+    ":active": {
       backgroundColor: "violet-10",
     },
     borderLeft: "solid 12px",
@@ -22,5 +22,3 @@ export const sidebarCss = (active: boolean): SxStyleProp => {
   }
   return css;
 };
-
-

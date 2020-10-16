@@ -15,8 +15,6 @@ export const PieceTile: React.FC<{
   onDrag: any;
 }> = (props) => {
   const type = props.type === PieceType.Master;
-  const colour = props.colour === Colour.Blue;
-
   const card = useSelector<State, State["card"]>((store) => store.card);
 
   const [{ isDragging }, drag] = useDrag({

@@ -1,6 +1,6 @@
 /** @jsx jsx */
-import { jsx, SxStyleProp, Flex } from "theme-ui";
-import React, { useState, useCallback } from "react";
+import { jsx, SxStyleProp } from "theme-ui";
+import React from "react";
 import * as styles from "./Table.styles";
 import { Cards } from "../../constants/Card";
 import { Card } from "../card-list/Card";

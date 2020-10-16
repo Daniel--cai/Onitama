@@ -5,7 +5,6 @@ import {
   MOVING_PIECE,
 } from "./types";
 import { initialise } from "./state";
-import { getIndex } from "../../utils/coordinates";
 import { Colour } from "./models";
 import { isGameOver } from "../../utils/gamelogic";
 const initialState = initialise();

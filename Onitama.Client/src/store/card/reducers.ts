@@ -5,9 +5,6 @@ import {
   PLAY_CARD,
   INITIALISE,
 } from "./types";
-import { Cards } from "../../constants/Card";
-import { selectCard } from "./actions";
-import { types } from "util";
 
 export const initialState: CardState = {
   selected: -1,

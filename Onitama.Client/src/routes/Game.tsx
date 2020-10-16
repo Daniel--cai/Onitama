@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import { RouteComponentProps } from "react-router";
 import { Board } from "../components/board";
 
 import { State } from "../store";
@@ -22,8 +21,8 @@ export const Game: React.FC = (props) => {
   const dispatch = useDispatch();
   useEffect(() => {
     const config = initialiseCards();
-    dispatch(initialise([0, 1, 2, 3, 4]));
-  }, []);
+    dispatch(initialise(config));
+  }, [dispatch]);
   return (
     <Flex
       sx={{
@@ -33,7 +32,6 @@ export const Game: React.FC = (props) => {
         m: "xl",
         boxShadow: "elevation-25",
         margin: "auto",
-
       }}
     >
       <CardList cards={card.red} player={false} />

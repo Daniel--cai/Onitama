@@ -1,7 +1,4 @@
 import { Game } from "../game/models";
-
-import { Scoreboard } from "./models";
-
 export const CONNECTED = "connected";
 export const CODE_UPDATED = "codeUpdated";
 export const GAME_FETCHED = "gameFetched";

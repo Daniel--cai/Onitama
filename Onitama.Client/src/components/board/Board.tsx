@@ -23,7 +23,6 @@ export const Board: React.FC<{ pieces: Piece[] }> = (props) => {
   const [validSquare, setValidSquare] = useState<number[]>([]);
   const card = useSelector<State, State["card"]>((store) => store.card);
   const pieces = useSelector<State, State["pieces"]>((store) => store.pieces);
-  const game = useSelector<State, State["game"]>((store) => store.game);
   const [dragging, setDragging] = useState(false);
 
   function renderPiece(index: number) {

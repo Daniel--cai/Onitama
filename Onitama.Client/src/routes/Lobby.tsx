@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, SxStyleProp, Flex } from "theme-ui";
+import { jsx, Flex } from "theme-ui";
 import React, { useState, useCallback } from "react";
 // import logo from "../assets/images/logo.svg";
 import { useDispatch, useSelector } from "react-redux";
@@ -7,18 +7,11 @@ import { connect, join } from "../store/player/actions";
 import { State } from "../store";
 import { RouteComponentProps } from "react-router";
 import { Apiclient } from "../api/api";
-import Logo from "../assets/images/logo.png";
-import { CSSTransition } from "react-transition-group";
-import { Button } from "../components/button";
 import CoffeeIcon from "../assets/icons/Coffee.svg";
 import * as styles from "./Lobby.styles";
-import { Input } from "../components/input/Input";
-import { Modal } from "../components/modal";
 import { Sidebar } from "../components/sidebar/Sidebar";
-import { Board } from "../components/board";
 import { Game } from "./Game";
-import { Card } from "../components/card-list/Card";
-import { Cards } from "../constants/Card";
+
 export const Lobby: React.FC<RouteComponentProps<{ code: string }>> = (
   props
 ) => {
@@ -55,7 +48,7 @@ export const Lobby: React.FC<RouteComponentProps<{ code: string }>> = (
   return (
     <Flex sx={{ flexDirection: "column", height: "100%" }}>
       <Flex sx={styles.header}>
-        <img src={CoffeeIcon} sx={{ mr: "xs" }} />
+        <img src={CoffeeIcon} sx={{ mr: "xs" }} alt="Logo"/>
         <div>Onitama</div>
       </Flex>
       <Flex sx={{ flex: 1 }}>

@@ -1,9 +1,7 @@
 /** @jsx jsx */
-import { jsx, SxStyleProp, Flex } from "theme-ui";
+import { jsx, Flex } from "theme-ui";
 import SearchIcon from "../../assets/icons/Search.svg";
 import * as styles from "./Sidebar.styles";
-import { Card } from "../card-list/Card";
-import { Cards } from "../../constants/Card";
 import { Table } from "../../components/table";
 export const Sidebar: React.FC = () => {
   return (
@@ -14,13 +12,13 @@ export const Sidebar: React.FC = () => {
       }}
     >
       <Flex sx={styles.sidebarCss(true)}>
-        <img src={SearchIcon} sx={{ mr: "sm" }} /> Play
+        <img src={SearchIcon} sx={{ mr: "sm" }} alt="Play" /> Play
       </Flex>
       <Flex sx={styles.sidebarCss(false)}>
-        <img src={SearchIcon} sx={{ mr: "sm" }} /> Learn
+        <img src={SearchIcon} sx={{ mr: "sm" }} alt="Learn" /> Learn
       </Flex>
       <Flex sx={styles.sidebarCss(false)}>
-        <img src={SearchIcon} sx={{ mr: "sm" }} /> Watch
+        <img src={SearchIcon} sx={{ mr: "sm" }} alt="Watch" /> Watch
       </Flex>
       <Table />
     </Flex>
