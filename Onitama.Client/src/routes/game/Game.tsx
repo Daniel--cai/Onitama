@@ -1,21 +1,19 @@
 /** @jsx jsx */
-import { jsx, Flex } from "theme-ui";
-import React, { useState, useCallback } from "react";
+import { jsx, Flex } from 'theme-ui';
+import React, { useState, useCallback } from 'react';
 // import logo from "../assets/images/logo.svg";
-import { useDispatch, useSelector } from "react-redux";
-import { connect, join } from "../store/player/actions";
-import { State } from "../store";
-import { RouteComponentProps } from "react-router";
-import { Apiclient } from "../api/api";
-import CoffeeIcon from "../assets/icons/Coffee.svg";
-import * as styles from "./Lobby.styles";
-import { Sidebar } from "../components/sidebar/Sidebar";
-import { Game } from "./Game";
+import { useDispatch, useSelector } from 'react-redux';
+import { connect, join } from '../../store/player/actions';
+import { State } from '../../store';
+import { RouteComponentProps } from 'react-router';
+import { Apiclient } from '../../api/api';
+import CoffeeIcon from '../../assets/icons/Coffee.svg';
+import * as styles from './Game.styles';
+import { Sidebar } from '../../components/sidebar/Sidebar';
+import { GameBoard } from '../GameBoard';
 
-export const Lobby: React.FC<RouteComponentProps<{ code: string }>> = (
-  props
-) => {
-  const [name, setName] = useState("test");
+export const Game: React.FC<RouteComponentProps<{ code: string }>> = (props) => {
+  const [name, setName] = useState('test');
   //const [code, setCode] = useState("");
   const code = props.match.params.code;
   const dispatch = useDispatch();
@@ -43,12 +41,12 @@ export const Lobby: React.FC<RouteComponentProps<{ code: string }>> = (
   const [inProp, setInProp] = useState(true);
   const disconnectPlayer = useCallback(() => {
     //dispatch(removePlayer())
-    console.log("sdf");
+    console.log('sdf');
   }, []);
   return (
-    <Flex sx={{ flexDirection: "column", height: "100%" }}>
+    <Flex sx={{ flexDirection: 'column', height: '100%' }}>
       <Flex sx={styles.header}>
-        <img src={CoffeeIcon} sx={{ mr: "xs" }} alt="Logo"/>
+        <img src={CoffeeIcon} sx={{ mr: 'xs' }} alt="Logo" />
         <div>Onitama</div>
       </Flex>
       <Flex sx={{ flex: 1 }}>
@@ -56,29 +54,9 @@ export const Lobby: React.FC<RouteComponentProps<{ code: string }>> = (
         <Flex
           sx={{
             flex: 1,
-            flexDirection: "column",
-          }}
-        >
-          {/* <Flex
-            sx={{
-              backgroundColor: "white",
-              borderRadius: "soft",
-              m: "xl",
-              p: "xl",
-            }}
-          >
-            <div
-              sx={{
-                borderRadius: "circle",
-                backgroundColor: "charcoal-25",
-                p: "md",
-              }}
-            >
-              DC
-            </div>
-            <div>Example Candidiate New</div>
-          </Flex> */}
-          <Game />
+            flexDirection: 'column'
+          }}>
+          <GameBoard />
         </Flex>
       </Flex>
     </Flex>

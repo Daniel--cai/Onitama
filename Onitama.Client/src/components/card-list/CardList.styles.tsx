@@ -1,9 +1,9 @@
-import { SxStyleProp } from "theme-ui";
-import { CardSize } from "./Card";
+import { SxStyleProp } from 'theme-ui';
+import { CardSize } from './Card';
 
 export const cardListCss: SxStyleProp = {
-  flexWrap: "wrap",
-  justifyContent: "center",
+  flexWrap: 'wrap',
+  justifyContent: 'center'
 };
 
 export const cardCss = (
@@ -14,34 +14,34 @@ export const cardCss = (
 ): SxStyleProp => {
   {
     const css: SxStyleProp = {
-      display: "grid",
-      gridTemplateColumns: "repeat(5, auto)",
-      gridTemplateRows: "repeat(5, auto)",
-      width: "8rem",
-      height: "8rem",
-      boxShadow: "elevation-10",
-      background: "white",
-      margin: "md",
-      border: "solid 2px",
-      borderColor: "white",
+      display: 'grid',
+      gridTemplateColumns: 'repeat(5, auto)',
+      gridTemplateRows: 'repeat(5, auto)',
+      width: '8rem',
+      height: '8rem',
+      boxShadow: 'elevation-10',
+      background: 'white',
+      margin: 'md',
+      border: 'solid 2px',
+      borderColor: 'white'
     };
-    if (size === "small") {
-      css.width = "2.5rem";
-      css.height = "2.5rem";
+    if (size === 'small') {
+      css.width = '2.5rem';
+      css.height = '2.5rem';
     }
     if (player) {
-      css[":hover"] = {
-        boxShadow: "elevation-10",
-        cursor: "pointer",
+      css[':hover'] = {
+        boxShadow: 'elevation-10',
+        cursor: 'pointer'
       };
     }
 
     if (active) {
-      css.boxShadow = "elevation-10";
-      css[":hover"] = {
-        boxShadow: "elevation-10",
+      css.boxShadow = 'elevation-10';
+      css[':hover'] = {
+        boxShadow: 'elevation-10'
       };
-      css.borderColor = "charcoal-75";
+      css.borderColor = 'charcoal-75';
     }
     if (disabled) {
       css.opacity = 0.5;
@@ -53,16 +53,16 @@ export const cardCss = (
 export const squareCss = (move: boolean, base: boolean) => {
   {
     const css: SxStyleProp = {
-      border: "1px solid",
-      borderColor: "charcoal-25",
+      border: '1px solid',
+      borderColor: 'charcoal-25'
     };
     if (move) {
-      css.backgroundColor = "charcoal-50";
-      css.borderColor = "charcoal-50";
+      css.backgroundColor = 'charcoal-50';
+      css.borderColor = 'charcoal-50';
     }
     if (base) {
-      css.backgroundColor = "charcoal-75";
-      css.borderColor = "charcoal-75";
+      css.backgroundColor = 'charcoal-75';
+      css.borderColor = 'charcoal-75';
     }
 
     return css;

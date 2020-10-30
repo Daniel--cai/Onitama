@@ -15,7 +15,7 @@ export const initialiseCards = () => {
   return shuffled.slice(0, 5);
 };
 
-export const Game: React.FC = (props) => {
+export const GameBoard: React.FC = (props) => {
   const pieces = useSelector((store: State) => store.pieces);
   const card = useSelector((store: State) => store.card);
   const dispatch = useDispatch();
