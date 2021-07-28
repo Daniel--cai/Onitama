@@ -6,10 +6,11 @@ using Xunit;
 using Onitama.Common;
 using Onitama.Domain.Entities;
 using System.Threading.Tasks;
-using System.Linq;
 using Onitama.Domain.ValueObjects;
 using System.Collections.Generic;
 using Onitama.Domain.Enumerations;
+using Onitama.Infrastructure.Persistence;
+using System.Linq;
 
 namespace Onitama.Persistence.IntegrationTests
 {
@@ -97,7 +98,7 @@ namespace Onitama.Persistence.IntegrationTests
 
             await _sut.SaveChangesAsync();
 
-            var result = await _sut.Player.FirstOrDefaultAsync(p => p.Name == expected.Name);
+            var result = await _sut.Player.AsQueryable().FirstOrDefaultAsync(p => p.Name == expected.Name);
 
             result.ShouldBe(expected);
             result.DateCreated.ShouldBe(_dateTime);
@@ -130,7 +131,7 @@ namespace Onitama.Persistence.IntegrationTests
 
             await _sut.SaveChangesAsync();
 
-            var result = await _sut.Round.Where(r => r.LobbyId == lobbyId).ToListAsync();
+            var result = await _sut.Round.AsQueryable().Where(r => r.LobbyId == lobbyId).ToListAsync();
             result.ShouldBe(new List<Round> { expectedRoundOne, expectedRoundTwo });
             result[0].RoundId.ShouldNotBe(0);
             result[1].RoundId.ShouldNotBe(0);

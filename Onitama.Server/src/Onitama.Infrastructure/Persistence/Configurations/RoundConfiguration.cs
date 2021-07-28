@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Onitama.Domain.Entities;
 using Onitama.Domain.ValueObjects;
 
-namespace Onitama.Persistence.Configurations 
+namespace Onitama.Infrastructure.Persistence.Configurations 
 {
     public class RoundConfiguration : IEntityTypeConfiguration<Round>
     {

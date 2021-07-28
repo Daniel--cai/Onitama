@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Onitama.Domain.Entities;
 
-namespace Onitama.Persistence.Configurations 
+namespace Onitama.Infrastructure.Persistence.Configurations 
 {
     public class PlayerConfiguration : IEntityTypeConfiguration<Player>
     {

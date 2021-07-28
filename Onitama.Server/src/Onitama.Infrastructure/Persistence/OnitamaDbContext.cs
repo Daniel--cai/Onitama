@@ -8,7 +8,7 @@ using Onitama.Domain.ValueObjects;
 using Onitama.Common;
 using Onitama.Domain.Common;
 
-namespace Onitama.Persistence
+namespace Onitama.Infrastructure.Persistence
 {
     public class OnitamaDbContext : DbContext, IOnitamaDbContext
     {

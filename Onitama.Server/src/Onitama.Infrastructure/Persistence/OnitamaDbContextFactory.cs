@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
 
-namespace Onitama.Persistence
+namespace Onitama.Infrastructure.Persistence
 {
     public class OnitamaDbContextFactory : DesignTimeDbContextFactoryBase<OnitamaDbContext>
     {

@@ -3,7 +3,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Onitama.Application.Common.Interfaces;
 
-namespace Onitama.Persistence
+namespace Onitama.Infrastructure.Persistence
 {
     public static class DependencyInjection
     {

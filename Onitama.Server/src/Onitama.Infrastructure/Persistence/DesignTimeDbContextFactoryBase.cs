@@ -4,7 +4,7 @@ using Microsoft.Extensions.Configuration;
 using System;
 using System.IO;
 
-namespace Onitama.Persistence
+namespace Onitama.Infrastructure.Persistence
 {
     public abstract class DesignTimeDbContextFactoryBase<TContext> :
             IDesignTimeDbContextFactory<TContext> where TContext : DbContext

@@ -20,7 +20,4 @@
     <ProjectReference Include="..\Onitama.Domain\Onitama.Domain.csproj" />
     <ProjectReference Include="..\Onitama.Common\Onitama.Common.csproj" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Configurations\" />
-  </ItemGroup>
 </Project>
