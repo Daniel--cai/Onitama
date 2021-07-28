@@ -43,6 +43,7 @@ namespace Onitama.Application.Game.Commands
                 };
 
                 await _mediator.Publish(notification);
+
                 return new CreateGameResponse
                 {
                     LobbyId = lobby.LobbyId

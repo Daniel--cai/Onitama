@@ -31,7 +31,7 @@ namespace Onitama.Application.Game.Commands
                 var lobby = await _onitamaDbContext.Lobby.Where(lobby => lobby.LobbyId == request.LobbyId).FirstOrDefaultAsync();
                 lobby.GameState = Domain.Enumerations.State.InProgress;
                 
-                await _mediator.Publish(new GameStartedEvent { LobbyId = lobby.LobbyId, Players = lobby.Players, PlayerTurn =  });
+                await _mediator.Publish(new GameStartedEvent { LobbyId = lobby.LobbyId, Players = lobby.Players });
                 await _mediator.Publish(new TurnPlayedEvent { });
 
                 return new StartGameResponse();

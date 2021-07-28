@@ -12,6 +12,7 @@ namespace Onitama.Application.Infrastructure
             {
                 return Colour.Blue;
             }
+
             return Colour.Red;
         }
     }

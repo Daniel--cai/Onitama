@@ -7,6 +7,6 @@ namespace Onitama.Server.RealTime.Interface
     {
         Task LobbyJoined(LobbyJoinedDTO notification);
         Task LobbyLeft(LobbyLeftDTO notification);
-        Task LobbyStarted(LobbyStartedDTO notification);
+        // Task LobbyStarted(LobbyStartedDTO notification);
     }
 }

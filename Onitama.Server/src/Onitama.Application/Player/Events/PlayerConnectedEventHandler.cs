@@ -1,9 +1,6 @@
-﻿using System;
-using System.Linq;
-using System.Threading;
+﻿using System.Threading;
 using System.Threading.Tasks;
 using MediatR;
-using Microsoft.EntityFrameworkCore;
 using Onitama.Application.Common.Interfaces;
 using Onitama.Application.Events;
 
