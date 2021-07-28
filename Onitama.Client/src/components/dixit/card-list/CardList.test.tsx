@@ -1,7 +1,7 @@
 import React from "react";
 import {
   render,
-} from "../../store/test/testutils";
+} from "../../../store/test/testutils";
 import CardList from "./CardList";
 import '@testing-library/jest-dom/extend-expect'
 

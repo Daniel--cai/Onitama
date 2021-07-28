@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
-import { Board } from "../components/board";
+import { Board } from "../components/dixit/board";
 
 import { State } from "../store";
 import { useSelector, useDispatch } from "react-redux";
-import { CardList } from "../components/card-list";
+import { CardList } from "../components/dixit/card-list";
 import { Cards } from "../constants/Card";
 import { initialise } from "../store/card/actions";
 import { Flex } from "theme-ui";

@@ -3,20 +3,20 @@ import { jsx } from "theme-ui";
 import * as styles from "./Board.styles";
 
 import React, { useState, useEffect } from "react";
-import { Piece, Colour } from "../../store/pieces/models";
+import { Piece, Colour } from "../../../store/pieces/models";
 import { useDispatch, useSelector } from "react-redux";
 import {
   getPosition,
   getIndex,
   getCalculatedOffsets,
-} from "../../utils/coordinates";
+} from "../../../utils/coordinates";
 import { PieceTile } from "./PieceTile";
 import { Square } from "./Square";
-import { movingPiece } from "../../store/pieces/actions";
-import { State } from "../../store";
-import { PiecesActionTypes } from "../../store/pieces/types";
+import { movingPiece } from "../../../store/pieces/actions";
+import { State } from "../../../store";
+import { PiecesActionTypes } from "../../../store/pieces/types";
 import { Dispatch } from "redux";
-import { Cards } from "../../constants/Card";
+import { Cards } from "../../../constants/Card";
 
 export const Board: React.FC<{ pieces: Piece[] }> = (props) => {
   const dispatch = useDispatch<Dispatch<PiecesActionTypes>>();

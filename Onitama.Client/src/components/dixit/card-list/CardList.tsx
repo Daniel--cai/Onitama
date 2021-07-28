@@ -2,14 +2,14 @@
 import { jsx, Flex } from "theme-ui";
 import * as styles from "./CardList.styles";
 import React, { useCallback } from "react";
-import { Cards } from "../../constants/Card";
+import { Cards } from "../../../constants/Card";
 import { useDispatch, useSelector } from "react-redux";
-import { selectCard } from "../../store/card/actions";
+import { selectCard } from "../../../store/card/actions";
 import { Card } from "./Card";
 
-import { State } from "../../store";
+import { State } from "../../../store";
 import { Dispatch } from "redux";
-import { CardActionTypes } from "../../store/card/types";
+import { CardActionTypes } from "../../../store/card/types";
 
 export const CardList: React.FC<{
   cards: number[];

@@ -4,11 +4,11 @@ import * as styles from "./Board.styles";
 import React from "react";
 import { useDrop, DropTargetMonitor } from "react-dnd";
 import { useDispatch, useSelector } from "react-redux";
-import { getPosition } from "../../utils/coordinates";
-import { movePiece } from "../../store/pieces/actions";
-import { playCard } from "../../store/card/actions";
-import { playTurn } from "../../store/game/actions";
-import { State } from "../../store";
+import { getPosition } from "../../../utils/coordinates";
+import { movePiece } from "../../../store/pieces/actions";
+import { playCard } from "../../../store/card/actions";
+import { playTurn } from "../../../store/game/actions";
+import { State } from "../../../store";
 
 export const Square: React.FC<{
   index: number;

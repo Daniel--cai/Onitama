@@ -27,7 +27,7 @@ export const buttonCss = (props: ButtonCssProps): SxStyleProp => {
     textAlign: "center",
     color: "white",
 
-    borderRadius: "soft",
+    borderRadius: "hard",
     borderWidth: "0.125rem",
     
   };

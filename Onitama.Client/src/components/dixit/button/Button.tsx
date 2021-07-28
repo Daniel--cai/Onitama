@@ -1,14 +1,12 @@
 /** @jsx jsx */
-import { jsx, SxStyleProp } from "theme-ui";
-import React from "react";
+import { jsx, SxStyleProp } from 'theme-ui';
+import React from 'react';
+import * as styles from './Button.styles';
 
-import * as styles from "./Button.styles";
+export type ButtonSize = 'small' | 'large';
+export type ButtonType = 'primary' | 'secondary' | 'outlined' | 'text';
 
-export type ButtonSize = "small" | "large";
-export type ButtonType = "primary" | "secondary" | "ghost";
-
-export interface ButtonProps
-  extends React.InputHTMLAttributes<HTMLButtonElement> {
+export interface ButtonProps extends React.InputHTMLAttributes<HTMLButtonElement> {
   id?: string;
   sx?: SxStyleProp;
   children?: React.ReactNode;
@@ -18,6 +16,7 @@ export interface ButtonProps
   secondary?: boolean;
   buttonSize?: ButtonSize;
   onClick?: (e: React.SyntheticEvent) => any;
+  icon?: 'text';
 }
 
 export const Button: React.FunctionComponent<ButtonProps> = React.forwardRef(
@@ -33,7 +32,7 @@ export const Button: React.FunctionComponent<ButtonProps> = React.forwardRef(
       disabled,
       sx,
       secondary,
-      buttonSize = "large",
+      buttonSize = 'large',
       ...rest
     },
     ref: React.Ref<HTMLButtonElement>
@@ -45,17 +44,16 @@ export const Button: React.FunctionComponent<ButtonProps> = React.forwardRef(
         sx={{
           ...sx!,
           ...styles.buttonCss({
-            buttonType: "primary",
+            buttonType: 'primary',
             buttonSize,
             secondary,
-            disabled,
-          }),
+            disabled
+          })
         }}
         className={className}
         onClick={onClick}
         type="button"
-        {...rest}
-      >
+        {...rest}>
         {children}
       </button>
     );

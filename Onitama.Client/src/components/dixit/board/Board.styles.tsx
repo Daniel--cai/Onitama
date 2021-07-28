@@ -1,5 +1,5 @@
 import { SxStyleProp } from 'theme-ui';
-import { Colour } from '../../store/pieces/models';
+import { Colour } from '../../../store/pieces/models';
 
 export const boardCss: SxStyleProp = {
   display: 'grid',

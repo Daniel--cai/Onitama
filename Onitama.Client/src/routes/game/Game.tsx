@@ -9,7 +9,7 @@ import { RouteComponentProps } from 'react-router';
 import { Apiclient } from '../../api/api';
 import CoffeeIcon from '../../assets/icons/Coffee.svg';
 import * as styles from './Game.styles';
-import { Sidebar } from '../../components/sidebar/Sidebar';
+import { Sidebar } from '../../components/dixit/sidebar/Sidebar';
 import { GameBoard } from '../GameBoard';
 
 export const Game: React.FC<RouteComponentProps<{ code: string }>> = (props) => {

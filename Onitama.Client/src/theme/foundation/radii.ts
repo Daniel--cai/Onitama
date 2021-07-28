@@ -2,7 +2,7 @@ const primary = {
   none: "0",
   soft: "0.25rem",
   medium: "0.5rem",
-  hard: "0",
+  hard: "1.25rem",
   circle: "100%",
 };
 

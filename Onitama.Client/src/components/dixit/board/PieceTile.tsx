@@ -4,9 +4,9 @@ import * as styles from './Board.styles';
 
 import React, { useEffect } from 'react';
 import { useDrag } from 'react-dnd';
-import { PieceType, Colour } from '../../store/pieces/models';
+import { PieceType, Colour } from '../../../store/pieces/models';
 import { useSelector } from 'react-redux';
-import { State } from '../../store';
+import { State } from '../../../store';
 
 export const PieceTile: React.FC<{
   type: PieceType;
