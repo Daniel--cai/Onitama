@@ -1,15 +1,9 @@
-﻿using System;
-using System.Reflection;
-using Autofac;
-using Autofac.Extensions.DependencyInjection;
-using Onitama.Server.RealTime;
-using MediatR;
+﻿using Onitama.Server.RealTime;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Serilog;
 using Microsoft.Extensions.Hosting;
 namespace Onitama.Server
 {
