@@ -20,10 +20,12 @@
     <PackageReference Include="Shouldly" Version="3.0.2" />
         
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="5.0.8" />
+    <PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="5.0.8" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Controllers\" />
+    <Folder Include="Fixtures\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\Onitama.Server\Onitama.Server.csproj">

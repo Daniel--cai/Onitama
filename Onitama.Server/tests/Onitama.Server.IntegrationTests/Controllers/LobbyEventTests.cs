@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Net.Http;
 using System.Threading.Tasks;
-using Onitama.Api.IntegrationTests;
 using Xunit;
+using Onitama.Server.IntegrationTests.Fixtures;
+using Microsoft.AspNetCore.SignalR.Client;
 
 namespace Onitama.Server.IntegrationTests.Controllers
 {
@@ -17,8 +18,10 @@ namespace Onitama.Server.IntegrationTests.Controllers
 
         public async Task PlayerConnectedEvent_WhenNewPlayerJoins_ShouldCreateConnection()
         {
-            // var connection = new HubConnectionBuilder();
+            await using var playerOne = HubConnectionFactory.Create();
+            await using var playerTwo = HubConnectionFactory.Create();
+            await playerOne.StartAsync();
+            await playerTwo.StartAsync();
         }
-
     }
 }

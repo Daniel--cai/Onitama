@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Onitama.Api.IntegrationTests
+namespace Onitama.Server.IntegrationTests.Fixtures
 {
     public class CustomWebApplicationFactory<TStartup> : WebApplicationFactory<TStartup> where TStartup : class
     {
@@ -27,19 +27,10 @@ namespace Onitama.Api.IntegrationTests
                 // Register test services
                 AddTestServices(services);
             })
-            .UseEnvironment("Development");
+            .UseEnvironment("Development")
+            .UseUrls(UrlHelper.BaseUrl);
         }
 
-        public HttpClient CreateClientWithoutCookie()
-        {
-            return CreateClient(new WebApplicationFactoryClientOptions { HandleCookies = false });
-        }
-
-        public HttpClient GetAnonymousClient()
-        {
-            return CreateClient();
-        }
-      
         private static void AddTestServices(IServiceCollection services)
         {
             // Configure test services here.
